@@ -31,4 +31,10 @@ require('lazy').setup({
     { 'L3MON4D3/LuaSnip' },
     { 'nvim-tree/nvim-tree.lua', version = '*', lazy = false, dependencies = { 'nvim-tree/nvim-web-devicons', } },
     { 'kdheepak/lazygit.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, },
+    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+    { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+    { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
 })
+
+vim.keymap.set('n', '<leader>ll', ':Lazy<CR>')
+
