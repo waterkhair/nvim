@@ -16,8 +16,8 @@ local function my_on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
-    vim.keymap.set('n', '<leader>eo', ':NvimTreeOpen<CR>')
-    vim.keymap.set('n', '<leader>ec', ':NvimTreeClose<CR>')
+    vim.keymap.set('n', '<leader>eo', ':NvimTreeOpen<CR>', { silent = true })
+    vim.keymap.set('n', '<leader>ec', ':NvimTreeClose<CR>', { silent = true })
     vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
 end
 
