@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     { 'nvim-telescope/telescope.nvim', tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim' } },
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+    { 'rose-pine/neovim', name = 'rose-pine' },
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     { 'theprimeagen/harpoon' },
     { 'mbbill/undotree' },

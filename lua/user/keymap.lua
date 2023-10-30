@@ -24,6 +24,6 @@ vim.keymap.set('n', '<leader>tn', ':tabedit<CR>', { silent = true })
 vim.keymap.set('n', '<leader>to', '<C-w>T')
 
 -- Split window
-vim.keymap.set('n', '<leader>sh', ':split<Return><C-w>w')
-vim.keymap.set('n', '<leader>sv', ':vsplit<Return><C-w>w')
+vim.keymap.set('n', '<leader>sh', ':split<Return><C-w>w', { silent = true })
+vim.keymap.set('n', '<leader>sv', ':vsplit<Return><C-w>w', { silent = true })
 

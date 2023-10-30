@@ -1,10 +1,8 @@
-function SetColorScheme(color)
-	color = color or 'catppuccin'
-	vim.cmd.colorscheme(color)
+vim.cmd.colorscheme('catppuccin')
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
-	vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-	vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-end
-
-SetColorScheme()
+-- Set colors
+vim.keymap.set('n', '<leader>cc', ':colorscheme catppuccin<CR>', { silent = true })
+vim.keymap.set('n', '<leader>cr', ':colorscheme rose-pine<CR>', { silent = true })
 
