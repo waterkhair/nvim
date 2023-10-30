@@ -1,4 +1,4 @@
 require('telescope').load_extension('lazygit')
 
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
+vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { silent = true })
 

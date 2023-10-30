@@ -20,7 +20,7 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', '<leader>rc', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Tabs
-vim.keymap.set('n', '<leader>tn', ':tabedit<CR>')
+vim.keymap.set('n', '<leader>tn', ':tabedit<CR>', { silent = true })
 vim.keymap.set('n', '<leader>to', '<C-w>T')
 
 -- Split window

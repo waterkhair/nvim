@@ -36,5 +36,5 @@ require('lazy').setup({
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
 })
 
-vim.keymap.set('n', '<leader>ll', ':Lazy<CR>')
+vim.keymap.set('n', '<leader>ll', ':Lazy<CR>', { silent = true })
 
