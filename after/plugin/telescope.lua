@@ -12,3 +12,24 @@ vim.keymap.set('n', '<leader>tw', builtin.spell_suggest, {})
 vim.keymap.set('n', '<leader>tl', builtin.highlights, {})
 vim.keymap.set('n', '<leader>tc', builtin.current_buffer_fuzzy_find, {})
 
+local whichkey = require('which-key')
+
+whichkey.register({
+    t = {
+        'Telescope/Tabs',
+        f = 'Find File',
+        g = 'Find Git File',
+        s = 'Search Current Word',
+        d = 'Search In Current Directory',
+        b = 'Find Buffer',
+        o = 'Find Old Files',
+        h = 'Search History',
+        m = 'Search Marks',
+        w = 'Find Suggestions',
+        l = 'Highlights',
+        c = 'Search Word In Current Buffer',
+    },
+}, {
+    prefix = '<leader>',
+})
+

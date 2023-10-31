@@ -38,3 +38,23 @@ end
 vim.keymap.set('n', '<leader>ft', '<cmd>lua _FLOAT_TOGGLE()<CR>')
 vim.keymap.set('n', '<leader>nt', '<cmd>lua _NODE_TOGGLE()<CR>')
 
+local whichkey = require('which-key')
+
+whichkey.register({
+    ['<c-\\>'] = {
+        'Toggle Terminal',
+    },
+})
+
+whichkey.register({
+    f = {
+        'ToggleTerm',
+        t = 'Open Float Terminal',
+    },
+    n = {
+        'ToggleTerm',
+        t = 'Open Node Terminal',
+    },
+}, {
+    prefix = '<leader>',
+})

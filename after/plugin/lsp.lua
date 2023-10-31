@@ -24,3 +24,14 @@ lspconfig.lua_ls.setup({ settings = { Lua = { diagnostics = { globals = { 'vim' 
 
 vim.keymap.set('n', '<leader>mm', ':Mason<CR>', { silent = true })
 
+local whichkey = require('which-key')
+
+whichkey.register({
+    m = {
+        'Mason',
+        m = 'Open Mason',
+    },
+}, {
+    prefix = '<leader>',
+})
+

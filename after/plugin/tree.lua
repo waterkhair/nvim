@@ -38,3 +38,15 @@ require('nvim-tree').setup({
     },
 })
 
+local whichkey = require('which-key')
+
+whichkey.register({
+    e = {
+        'File Explorer',
+        o = 'Open File Explorer',
+        c = 'Close File Explorer',
+    },
+}, {
+    prefix = '<leader>',
+})
+

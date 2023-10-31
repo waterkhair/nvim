@@ -9,3 +9,20 @@ vim.keymap.set('n', '<leader>h3', function() ui.nav_file(3) end)
 vim.keymap.set('n', '<leader>h4', function() ui.nav_file(4) end)
 vim.keymap.set('n', '<leader>h5', function() ui.nav_file(5) end)
 
+local whichkey = require('which-key')
+
+whichkey.register({
+    h = {
+        'Harpoon',
+        a = 'Add File',
+        e = 'Toggle Quick Menu',
+        ['1'] = 'Go To File 1',
+        ['2'] = 'Go To File 2',
+        ['3'] = 'Go To File 3',
+        ['4'] = 'Go To File 4',
+        ['5'] = 'Go To File 5',
+    },
+}, {
+    prefix = '<leader>',
+})
+
