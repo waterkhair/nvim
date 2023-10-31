@@ -1,3 +1,13 @@
+require('toggleterm').setup({
+    size = function(term)
+        if (term.direction == 'horizontal') then
+            return 20
+        elseif (term.direction == 'vertical') then
+            return 15
+        end
+    end,
+    open_mapping = [[<c-\>]],
+})
 function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
 
@@ -15,22 +25,16 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 local Terminal = require("toggleterm.terminal").Terminal
 local float = Terminal:new({ hidden = true, direction = 'float' })
-local horizontal = Terminal:new({ hidden = true, direction = 'horizontal' })
---local vertical = Terminal:new({ hidden = true, direction = 'vertical' })
+local node = Terminal:new({ cmd = 'node', hidden = true, direction = 'float' })
 
 function _FLOAT_TOGGLE()
     float:toggle()
 end
 
-function _HORIZONTAL_TOGGLE()
-    horizontal:toggle()
+function _NODE_TOGGLE()
+    node:toggle()
 end
 
---[[function _VERTICAL_TOGGLE()
-    vertical:toggle()
-end--]]
-
 vim.keymap.set('n', '<leader>ft', '<cmd>lua _FLOAT_TOGGLE()<CR>')
-vim.keymap.set('n', '<leader>ht', '<cmd>lua _HORIZONTAL_TOGGLE()<CR>')
---vim.keymap.set('n', '<leader>vt', '<cmd>lua _VERTICAL_TOGGLE()<CR>')
+vim.keymap.set('n', '<leader>nt', '<cmd>lua _NODE_TOGGLE()<CR>')
 
