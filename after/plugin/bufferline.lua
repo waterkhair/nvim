@@ -27,8 +27,8 @@ require('bufferline').setup({
     },
 })
 
-vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { silent = true })
-vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { silent = true })
+vim.keymap.set('n', '<leader>>', ':bnext<CR>', { silent = true })
+vim.keymap.set('n', '<leader><', ':bprevious<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bc', ':bd %<CR>:bprevious<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bo', ':.+,$bdelete<CR>', { silent = true })
 vim.keymap.set('n', '<leader>ba', ':%bd<CR>', { silent = true })
@@ -36,9 +36,10 @@ vim.keymap.set('n', '<leader>ba', ':%bd<CR>', { silent = true })
 local whichkey = require('which-key')
 
 whichkey.register({
+    ['>'] = 'Next Buffer',
+    ['<'] = 'Previous Buffer',
     b = {
         'Buffer',
-        n = 'Next Buffer',
         p = 'Previous Buffer',
         c = 'Close Curret Buffer',
         o = 'Close All Other Buffers',
