@@ -35,10 +35,8 @@ require('lazy').setup({
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
     { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
-    { 'folke/which-key.nvim', event = 'VeryLazy', init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end },
+    { 'folke/which-key.nvim', event = 'VeryLazy', init = function() vim.o.timeout = true vim.o.timeoutlen = 300 end },
+    { 'github/copilot.vim' },
 })
 
 vim.keymap.set('n', '<leader>ll', ':Lazy<CR>', { silent = true })
