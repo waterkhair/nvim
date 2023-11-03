@@ -20,7 +20,21 @@ require('mason-lspconfig').setup_handlers({
     end
 })
 
-lspconfig.lua_ls.setup({ settings = { Lua = { diagnostics = { globals = { 'vim' } } } } })
+lspconfig.lua_ls.setup({
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = {
+                    'vim',
+                },
+            },
+        },
+        workspace = {
+            maxPreload = 100000,
+            preloadFileSize = 10000,
+        },
+    },
+})
 
 vim.keymap.set('n', '<leader>mm', ':Mason<CR>', { silent = true })
 
