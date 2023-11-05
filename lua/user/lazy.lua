@@ -44,7 +44,7 @@ require('lazy').setup({
     -- Themes
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 }, -- Catppuccin for (Neo)vim
     { 'rose-pine/neovim', name = 'rose-pine' }, -- All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
-    --{ 'folke/tokyonight.nvim' }, -- A dark and light Neovim theme written in Lua.
+    { 'folke/tokyonight.nvim', name = 'tokyonight' }, -- A dark and light Neovim theme written in Lua.
     {
         'folke/noice.nvim', -- Completely replaces the UI for messages, cmdline and the popupmenu.
         dependencies = {

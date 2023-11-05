@@ -18,10 +18,7 @@ require('lualine').setup({
                 sections = { 'error', 'warn', 'info', 'hint' },
             },
         },
-        lualine_c = {
-            'location',
-            { noice.api.status.search.get, cond = noice.api.status.search.has, color = { fg = '#ff9e64' } }
-        },
+        lualine_c = { 'location' },
         lualine_x = {
             { noice.api.status.command.get, cond = noice.api.status.command.has },
             'encoding',
@@ -36,7 +33,9 @@ require('lualine').setup({
         lualine_c = { 'windows', 'tabs', 'buffers', { 'filename', path = 1 } },
     },
     winbar = {
-        lualine_b = { 'location' },
+        lualine_b = {
+            { noice.api.status.search.get, cond = noice.api.status.search.has, color = { fg = '#ff9e64' } }
+        },
         lualine_y = { { 'filename', path = 1 } },
     },
 })
