@@ -23,9 +23,7 @@ require('lazy').setup({
     --{ 'mfussenegger/nvim-dap' }, -- Debug Adapter Protocol client implementation for Neovim.
     --{ 'rcarriga/cmp-dap' }, -- nvim-cmp source for nvim-dap REPL and nvim-dap-ui buffers.
     --{ 'rcarriga/nvim-dap-ui' }, -- A UI for nvim-dap which provides a good out of the box configuration.
-    --{ 'rcarriga/nvim-notify' }, -- A fancy, configurable, notification manager for NeoVim.
     --{ 'stevearc/dressing.nvim' }, -- Override vim.ui.select and vim.ui.input with improvements upon the default behavior
-    --{ 'folke/noice.nvim' }, -- Completely replaces the UI for messages, cmdline and the popupmenu.
     --{ 'CosmicNvim/cosmic-ui' }, -- Provide a quick and easy way to create a Cosmic UI experience with Neovim!
     --{ 'glepnir/dashboard-nvim' }, -- Fancy and Blazing Fast start screen plugin of neovim.
     --{ 'simrat39/symbols-outline.nvim' }, -- A tree like view for symbols in Neovim using the LSP.
@@ -47,6 +45,13 @@ require('lazy').setup({
     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 }, -- Catppuccin for (Neo)vim
     { 'rose-pine/neovim', name = 'rose-pine' }, -- All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
     --{ 'folke/tokyonight.nvim' }, -- A dark and light Neovim theme written in Lua.
+    {
+        'folke/noice.nvim', -- Completely replaces the UI for messages, cmdline and the popupmenu.
+        dependencies = {
+            'MunifTanjim/nui.nvim', -- UI Component Library for Neovim.
+            'rcarriga/nvim-notify', -- A fancy, configurable, notification manager for NeoVim.
+        },
+    },
 
     -- Fuzy Finder
     {
