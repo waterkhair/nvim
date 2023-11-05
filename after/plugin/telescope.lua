@@ -12,7 +12,7 @@ vim.keymap.set('n', '<leader>tw', builtin.spell_suggest, {})
 vim.keymap.set('n', '<leader>tl', builtin.highlights, {})
 vim.keymap.set('n', '<leader>tc', builtin.current_buffer_fuzzy_find, {})
 
-local whichkey = require('which-key')
+--[[local whichkey = require('which-key')
 
 whichkey.register({
     t = {
@@ -31,5 +31,5 @@ whichkey.register({
     },
 }, {
     prefix = '<leader>',
-})
+})--]]
 

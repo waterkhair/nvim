@@ -1,4 +1,4 @@
-require('user.set')
-require('user.keymap')
+require('user.settings')
+require('user.mappings')
 require('user.lazy')
 

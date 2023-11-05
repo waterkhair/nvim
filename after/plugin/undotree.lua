@@ -1,6 +1,6 @@
 vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
 
-local whichkey = require('which-key')
+--[[local whichkey = require('which-key')
 
 whichkey.register({
     u = {
@@ -9,5 +9,5 @@ whichkey.register({
     },
 }, {
     prefix = '<leader>',
-})
+})--]]
 

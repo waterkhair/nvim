@@ -1,10 +1,7 @@
 require('toggleterm').setup({
     size = function(term)
-        if (term.direction == 'horizontal') then
-            return 20
-        elseif (term.direction == 'vertical') then
-            return 15
-        end
+        if (term.direction == 'horizontal') then return 20
+        elseif (term.direction == 'vertical') then return 15 end
     end,
     open_mapping = [[<c-\>]],
 })
@@ -27,18 +24,13 @@ local Terminal = require("toggleterm.terminal").Terminal
 local float = Terminal:new({ hidden = true, direction = 'float' })
 local node = Terminal:new({ cmd = 'node', hidden = true, direction = 'float' })
 
-function _FLOAT_TOGGLE()
-    float:toggle()
-end
-
-function _NODE_TOGGLE()
-    node:toggle()
-end
+function _FLOAT_TOGGLE() float:toggle() end
+function _NODE_TOGGLE() node:toggle() end
 
 vim.keymap.set('n', '<leader>ft', '<cmd>lua _FLOAT_TOGGLE()<CR>')
 vim.keymap.set('n', '<leader>nt', '<cmd>lua _NODE_TOGGLE()<CR>')
 
-local whichkey = require('which-key')
+--[[local whichkey = require('which-key')
 
 whichkey.register({
     ['<c-\\>'] = {
@@ -57,4 +49,5 @@ whichkey.register({
     },
 }, {
     prefix = '<leader>',
-})
+})--]]
+

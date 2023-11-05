@@ -9,7 +9,7 @@ vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
 require('ufo').setup({
     provider_selector = function()
-        return {'treesitter', 'indent'}
+        return { 'treesitter', 'indent' }
     end
 })
 

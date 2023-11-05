@@ -1,7 +1,12 @@
-local whichkey = require('which-key')
+local which_key = require('which-key')
 
-whichkey.register({
-    l = {
+ which_key.setup({
+    icons = { group = vim.g.icons_enabled and '' or '+', separator = "" },
+    disable = { filetypes = { 'TelescopePrompt' } },
+})
+
+which_key.register({
+    --[[l = {
         'Lazy',
         l = 'Open Lazy',
     },
@@ -18,7 +23,7 @@ whichkey.register({
         'Split Screen',
         h = 'Split Horiztonal Screen',
         v = 'Split Vertical Screen',
-    },
+    },--]]
 }, {
     prefix = '<leader>',
 })

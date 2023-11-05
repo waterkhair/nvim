@@ -38,7 +38,7 @@ require('nvim-tree').setup({
     },
 })
 
-local whichkey = require('which-key')
+--[[local whichkey = require('which-key')
 
 whichkey.register({
     e = {
@@ -48,5 +48,5 @@ whichkey.register({
     },
 }, {
     prefix = '<leader>',
-})
+})--]]
 
