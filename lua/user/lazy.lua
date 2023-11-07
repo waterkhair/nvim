@@ -49,9 +49,9 @@ require('lazy').setup({
         'folke/noice.nvim', -- Completely replaces the UI for messages, cmdline and the popupmenu.
         dependencies = {
             'MunifTanjim/nui.nvim', -- UI Component Library for Neovim.
-            'rcarriga/nvim-notify', -- A fancy, configurable, notification manager for NeoVim.
         },
     },
+    { 'rcarriga/nvim-notify' }, -- A fancy, configurable, notification manager for NeoVim.
 
     -- Fuzy Finder
     {
