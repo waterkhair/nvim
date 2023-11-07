@@ -2,12 +2,14 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 local lspkind = require('lspkind')
+local from_vscode = require('luasnip.loaders.from_vscode')
 
 local border_opts = {
     border = "rounded",
     winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 }
 
+from_vscode.lazy_load()
 cmp.setup({
     preselect = cmp.PreselectMode.None,
     completion = { completeopt = 'menu,menuone' },

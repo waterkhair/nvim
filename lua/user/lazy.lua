@@ -19,7 +19,6 @@ require('lazy').setup({
     --{ 'folke/neodev.nvim' }, -- Setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
     --{ 'mrjones2014/smart-splits.nvim' }, -- Supports seamless navigation between Neovim and terminal multiplexer split panes.
     --{ 'numToStr/Comment.nvim' }, --  Smart and Powerful commenting plugin for neovim.
-    --{ 'rafamadriz/friendly-snippets' }, -- Snippets collection for a set of different programming languages.
     --{ 'mfussenegger/nvim-dap' }, -- Debug Adapter Protocol client implementation for Neovim.
     --{ 'rcarriga/cmp-dap' }, -- nvim-cmp source for nvim-dap REPL and nvim-dap-ui buffers.
     --{ 'rcarriga/nvim-dap-ui' }, -- A UI for nvim-dap which provides a good out of the box configuration.
@@ -73,8 +72,9 @@ require('lazy').setup({
     { 'L3MON4D3/LuaSnip' }, -- Snippets
     { 'github/copilot.vim' }, -- Uses OpenAI Codex to suggest code and entire functions in real-time right from your editor.
     { 'onsails/lspkind.nvim' }, -- Adds vscode-like pictograms to neovim built-in lsp:
+    { 'saadparwaiz1/cmp_luasnip' }, -- luasnip completion source for nvim-cmp.
+    { 'rafamadriz/friendly-snippets' }, -- Snippets collection for a set of different programming languages.
     --{ 'tzachar/cmp-tabnine' }, -- Tabnine source for hrsh7th/nvim-cmp.
-    --{ 'saadparwaiz1/cmp_luasnip' }, -- luasnip completion source for nvim-cmp.
     --{ 'NMAC427/guess-indent.nvim' }, -- Blazing fast indentation style detection for Neovim written in Lua.
     --{ 'lukas-reineke/indent-blankline.nvim' }, -- Adds indentation guides to Neovim.
 
