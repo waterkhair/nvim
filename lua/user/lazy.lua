@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     -- Interesting plugins to review
-    --{ 'echasnovski/mini.bufremove' }, -- Buffer removing (unshow, delete, wipeout), which saves window layout.
     --{ 'folke/neodev.nvim' }, -- Setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
     --{ 'mrjones2014/smart-splits.nvim' }, -- Supports seamless navigation between Neovim and terminal multiplexer split panes.
     --{ 'numToStr/Comment.nvim' }, --  Smart and Powerful commenting plugin for neovim.
@@ -59,9 +58,6 @@ require('lazy').setup({
             'nvim-lua/plenary.nvim', -- All the lua functions I don't want to write twice.
         },
     },
-    -- Coding
-    { 'neovim/nvim-lspconfig' }, -- Configs for the Nvim LSP client.
-    { 'williamboman/mason-lspconfig.nvim' }, -- Bridges mason.nvim with the lspconfig plugin
 
     -- Autocomplete
     { 'hrsh7th/cmp-buffer' }, -- nvim-cmp source for buffer words.
@@ -79,6 +75,8 @@ require('lazy').setup({
     --{ 'lukas-reineke/indent-blankline.nvim' }, -- Adds indentation guides to Neovim.
 
     -- Coding
+    { 'neovim/nvim-lspconfig' }, -- Configs for the Nvim LSP client.
+    { 'williamboman/mason-lspconfig.nvim' }, -- Bridges mason.nvim with the lspconfig plugin
     {
         'nvim-treesitter/nvim-treesitter', -- Provides a simple and easy way to use the interface for tree-sitter.
         dependencies = {
@@ -97,6 +95,7 @@ require('lazy').setup({
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } }, -- A blazing fast and easy to configure Neovim statusline.
     { 'folke/which-key.nvim', event = 'VeryLazy', init = function() vim.o.timeout = true vim.o.timeoutlen = 300 end }, -- Displays a popup with possible key bindings.
     { 'mbbill/undotree' }, -- Visualizes the undo history and makes it easy to browse and switch between different undo branches.
+    { 'moll/vim-bbye' }, -- Allows you to do delete buffers (close files) without closing your windows or messing up your layout.
 
     -- Utils
     { 'williamboman/mason.nvim' }, -- Portable package manager for Neovim that runs everywhere Neovim runs.

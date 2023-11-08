@@ -8,6 +8,7 @@ require('lualine').setup({
         },
     },
     sections = {
+        lualine_a = { 'mode' },
         lualine_b = {
             'branch',
             'diff',
@@ -30,9 +31,19 @@ require('lualine').setup({
     },
     inactive_sections = {
         lualine_a = { 'mode' },
-        lualine_c = { 'windows', 'tabs', 'buffers', { 'filename', path = 1 } },
+        lualine_b = { },
+        lualine_c = { },
+        lualine_x = { },
+        lualine_y = { },
+        lualine_z = { 'datetime' },
     },
     winbar = {
+        lualine_b = {
+            { noice.api.status.search.get, cond = noice.api.status.search.has, color = { fg = '#ff9e64' } }
+        },
+        lualine_y = { { 'filename', path = 1 } },
+    },
+    inactive_winbar = {
         lualine_b = {
             { noice.api.status.search.get, cond = noice.api.status.search.has, color = { fg = '#ff9e64' } }
         },
