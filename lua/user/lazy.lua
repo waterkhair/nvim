@@ -17,7 +17,6 @@ require('lazy').setup({
     -- Interesting plugins to review
     --{ 'folke/neodev.nvim' }, -- Setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
     --{ 'mrjones2014/smart-splits.nvim' }, -- Supports seamless navigation between Neovim and terminal multiplexer split panes.
-    --{ 'numToStr/Comment.nvim' }, --  Smart and Powerful commenting plugin for neovim.
     --{ 'mfussenegger/nvim-dap' }, -- Debug Adapter Protocol client implementation for Neovim.
     --{ 'rcarriga/cmp-dap' }, -- nvim-cmp source for nvim-dap REPL and nvim-dap-ui buffers.
     --{ 'rcarriga/nvim-dap-ui' }, -- A UI for nvim-dap which provides a good out of the box configuration.
@@ -25,7 +24,6 @@ require('lazy').setup({
     --{ 'CosmicNvim/cosmic-ui' }, -- Provide a quick and easy way to create a Cosmic UI experience with Neovim!
     --{ 'glepnir/dashboard-nvim' }, -- Fancy and Blazing Fast start screen plugin of neovim.
     --{ 'simrat39/symbols-outline.nvim' }, -- A tree like view for symbols in Neovim using the LSP.
-    --{ 'nvimtools/none-ls.nvim' }, -- null-ls.nvim Reloaded, maintained by the community.
     --{ 'Exafunction/codeium.nvim' }, -- Native Codeium plugin for Neovim.
     --{ 'gbprod/yanky.nvim' }, -- Improve yank and put functionalities for Neovim.
     --{ 'theHamsta/nvim-dap-virtual-text' }, -- Adds virtual text support to nvim-dap. nvim-treesitter is used to find variable definitions.
@@ -70,6 +68,7 @@ require('lazy').setup({
     { 'onsails/lspkind.nvim' }, -- Adds vscode-like pictograms to neovim built-in lsp:
     { 'saadparwaiz1/cmp_luasnip' }, -- luasnip completion source for nvim-cmp.
     { 'rafamadriz/friendly-snippets' }, -- Snippets collection for a set of different programming languages.
+    { 'nvimtools/none-ls.nvim' }, -- null-ls.nvim Reloaded, maintained by the community.
     --{ 'tzachar/cmp-tabnine' }, -- Tabnine source for hrsh7th/nvim-cmp.
     --{ 'NMAC427/guess-indent.nvim' }, -- Blazing fast indentation style detection for Neovim written in Lua.
     --{ 'lukas-reineke/indent-blankline.nvim' }, -- Adds indentation guides to Neovim.
@@ -87,6 +86,7 @@ require('lazy').setup({
         build = ':TSUpdate',
     },
     { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' }, -- Makes Neovim's fold look modern and keep high performance.
+    { 'numToStr/Comment.nvim' }, -- Smart and Powerful commenting plugin for neovim.
 
     -- Navigation
     { 'nvim-tree/nvim-tree.lua', version = '*', lazy = false, dependencies = { 'nvim-tree/nvim-web-devicons', } }, -- A File Explorer For Neovim.
