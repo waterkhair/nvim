@@ -1,7 +1,7 @@
 local lsp_config = require('lspconfig')
-local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local which_key = require('which-key')
 
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
@@ -10,7 +10,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
-mason.setup({})
 mason_lspconfig.setup({ ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'html', 'cssls' } })
 mason_lspconfig.setup_handlers({
     function(server_name)
@@ -29,14 +28,6 @@ lsp_config.lua_ls.setup({
     },
 })
 
-vim.keymap.set('n', '<leader>mm', ':Mason<CR>', { silent = true })
-
--- Global mappings. See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>ds', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>dq', vim.diagnostic.setloclist)
-
 -- Use LspAttach autocommand to only map the following keys after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -46,34 +37,50 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
-        local opts = { buffer = ev.buf }
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-        vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-        vim.keymap.set('n', '<space>wl', function()
-            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, opts)
-        vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-        vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<space>ff', function()
-            vim.lsp.buf.format { async = true }
-        end, opts)
+        which_key.register({
+            ['<ctrl-k>'] = { vim.lsp.buf.signature_help, 'Go to signature help' },
+            ['<a-f>'] = { function()
+                vim.lsp.buf.format({ async = true })
+            end, 'Format current buffer' },
+            ['<space>'] = {
+                a = {
+                    'Actions',
+                    l = { vim.lsp.buf.code_action, 'List all code action' },
+                },
+                D = { vim.lsp.buf.type_definition, 'Type definition' },
+                r = {
+                    'Rename',
+                    a = { vim.lsp.buf.rename, 'Rename current variable' },
+                },
+                w = {
+                    'Workspaces',
+                    a = { vim.lsp.buf.add_workspace_folder, 'Add workspace folder' },
+                    l = { function()
+                        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                    end, 'List workspaces' },
+                    r = { vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder' },
+                },
+            },
+            g = {
+                'Go to',
+                D = { vim.lsp.buf.declaration, 'Go to declaration' },
+                d = { vim.lsp.buf.definition, 'Go to definition' },
+                i = { vim.lsp.buf.implementation, 'Go to implementation' },
+                r = { vim.lsp.buf.references, 'Go to references' },
+            },
+            K = { vim.lsp.buf.hover, 'Hover' },
+        }, {
+            buffer = ev.buf,
+        })
+        which_key.register({
+            ['<space>'] = {
+                c = {
+                    'Code',
+                    a = { vim.lsp.buf.code_action, 'Code action' },
+                },
+            },
+        }, {
+            mode = 'v',
+        })
     end,
 })
-
---[[local whichkey = require('which-key')
-
-whichkey.register({
-    m = {
-        'Mason',
-        m = 'Open Mason',
-    },
-}, {
-    prefix = '<leader>',
-})--]]
