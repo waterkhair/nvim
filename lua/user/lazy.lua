@@ -55,7 +55,7 @@ require('lazy').setup({
     { 'hrsh7th/cmp-nvim-lsp' }, -- nvim-cmp source for neovim's built-in language server client
     { 'hrsh7th/nvim-cmp' }, -- A completion engine plugin for neovim written in Lua
     { 'L3MON4D3/LuaSnip' }, -- Snippehs
-    { 'github/copilot.vim', lazy = true }, -- Uses OpenAI Codex to suggest code and entire functions in real-time right from your editor
+    { 'github/copilot.vim' }, -- Uses OpenAI Codex to suggest code and entire functions in real-time right from your editor
     { 'onsails/lspkind.nvim' }, -- Adds vscode-like pictograms to neovim built-in lsp:
     { 'saadparwaiz1/cmp_luasnip' }, -- luasnip completion source for nvim-cmp.
     { 'rafamadriz/friendly-snippets' }, -- Snippets collection for a set of different programming languages
