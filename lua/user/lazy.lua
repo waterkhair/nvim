@@ -34,7 +34,6 @@ require('lazy').setup({
     --{ 'echasnovski/mini.animate' }, -- Fast and flexible start screen.
     --{ 'ahmedkhalf/project.nvim' }, -- An all in one neovim plugin written in lua that provides superior project management
     --{ 'mfussenegger/nvim-lint' }, -- An asynchronous linter plugin for Neovim (>= 0.6.0) complementary to the built-in LSP support
-    --{ 'lewis6991/gitsigns.nvim' }, -- Super fast git decorations implemented purely in Lua
     --require('plugins.toggleterm'), -- A neovim plugin to persist and toggle multiple terminals
 
     -- Themes
@@ -85,6 +84,7 @@ require('lazy').setup({
     { 'kdheepak/lazygit.nvim', lazy = true }, -- Plugin for calling lazygit from within neovim
     { 'dstein64/vim-startuptime' }, -- A plugin for viewing vim and nvim startup event timing information
     { 'numToStr/FTerm.nvim', lazy = true }, -- No-nonsense floating terminal plugin for neovim
+    { 'lewis6991/gitsigns.nvim', lazy = true }, -- Super fast git decorations implemented purely in Lua
     --{ 'voldikss/vim-floaterm' }, -- Use (neo)vim terminal in the floating/popup window
 })
 

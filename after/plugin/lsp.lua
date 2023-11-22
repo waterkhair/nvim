@@ -39,15 +39,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         which_key.register({
             ['<ctrl-k>'] = { vim.lsp.buf.signature_help, 'Go to signature help' },
-            ['<a-f>'] = { function()
-                vim.lsp.buf.format({ async = true })
-            end, 'Format current buffer' },
             ['<space>'] = {
                 a = {
                     'Actions',
                     l = { vim.lsp.buf.code_action, 'List all code action' },
                 },
                 D = { vim.lsp.buf.type_definition, 'Type definition' },
+                F = {
+                    'Format',
+                    f = { function()
+                        vim.lsp.buf.format({ async = true })
+                    end, 'Format current buffer' }
+                },
                 r = {
                     'Rename',
                     a = { vim.lsp.buf.rename, 'Rename current variable' },
