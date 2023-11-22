@@ -48,7 +48,7 @@ which_key.register({
         c = { builtin.current_buffer_fuzzy_find, 'Search current buffer fuzzy find' },
     },
     g = {
-        'LazyGit',
+        'Git',
         g = { ':LazyGit<cr>', 'Open LazyGit' },
     },
     h = {
@@ -69,19 +69,15 @@ which_key.register({
         'Mason',
         m = { ':Mason<cr>', 'Open mason' },
     },
-    q = {
-        'Quit',
-        q = { ':q<cr>', 'Quit' },
-        Q = { ':q!<cr>', 'Force quit' },
-    },
     R = {
         'Replace',
         c = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', 'Replace all occurrences of current word' },
     },
     s = {
-        'Split window',
-        h = { ':split<Return><C-w>w', 'Split horizontal' },
-        v = { ':vsplit<Return><C-w>w', 'Split vertical' },
+        'File',
+        o = { ':so', 'Source file' },
+        s = { ':w', 'Save file' },
+        S = { ':w!', 'Force save file' },
     },
     t = {
         'Tabs/Themes',
@@ -107,8 +103,6 @@ which_key.register({
     ['<c-\\>'] = { ':FTermToggle<cr>', 'Toggle terminal' },
     ['<c-d>'] = { '<C-d>zz', 'Move half page down but keep cursor centered' },
     ['<c-u>'] = { '<C-u>zz', 'Move half page up but keep cursor centered' },
-    ['<c-s>'] = { ':w<cr>', 'Save buffer' },
-    ['<c-S>'] = { ':w!<cr>', 'Force save buffer' },
     ['[d'] = { vim.diagnostic.goto_prev, 'Go to previous diagnostic' },
     [']d'] = { vim.diagnostic.goto_next, 'Go to previous diagnostic' },
     ['[b'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },

@@ -3,13 +3,6 @@ local mason_lspconfig = require('mason-lspconfig')
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 local which_key = require('which-key')
 
-vim.api.nvim_create_autocmd('LspAttach', {
-    desc = 'LSP actions',
-    callback = function(event)
-        -- create keybindings here...
-    end
-})
-
 mason_lspconfig.setup({ ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'html', 'cssls' } })
 mason_lspconfig.setup_handlers({
     function(server_name)
