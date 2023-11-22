@@ -38,15 +38,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
                     l = { vim.lsp.buf.code_action, 'List all code action' },
                 },
                 D = { vim.lsp.buf.type_definition, 'Type definition' },
-                F = {
-                    'Format',
-                    f = { function()
-                        vim.lsp.buf.format({ async = true })
-                    end, 'Format current buffer' }
-                },
                 r = {
                     'Rename',
                     a = { vim.lsp.buf.rename, 'Rename current variable' },
+                },
+                s = {
+                    'File',
+                    f = { function()
+                        vim.lsp.buf.format({ async = true })
+                    end, 'Format current file' }
                 },
                 w = {
                     'Workspaces',

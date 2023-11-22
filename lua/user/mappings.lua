@@ -75,9 +75,9 @@ which_key.register({
     },
     s = {
         'File',
-        o = { ':so', 'Source file' },
-        s = { ':w', 'Save file' },
-        S = { ':w!', 'Force save file' },
+        o = { ':so<cr>', 'Source file' },
+        s = { ':w<cr>', 'Save file' },
+        S = { ':w!<cr>', 'Force save file' },
     },
     t = {
         'Tabs/Themes',
