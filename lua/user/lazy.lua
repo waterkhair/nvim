@@ -68,7 +68,7 @@ require('lazy').setup({
     { 'neovim/nvim-lspconfig', lazy = true }, -- Configs for the Nvim LSP client
     { 'williamboman/mason-lspconfig.nvim', lazy = true }, -- Bridges mason.nvim with the lspconfig plugin
     require('plugins.treesitter'), -- Provides a simple and easy way to use the interface for tree-sitter
-    require('plugins.ufo'), -- Makes Neovim's fold look modern and keep high performance
+    require('plugins.nvim_ufo'), -- Makes Neovim's fold look modern and keep high performance
     { 'numToStr/Comment.nvim', opts = {} }, -- Smart and Powerful commenting plugin for neovim
 
     -- Navigation
