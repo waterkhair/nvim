@@ -61,6 +61,10 @@ which_key.register({
         ['4'] = { function() ui.nav_file(4) end, 'Go to file 4' },
         ['5'] = { function() ui.nav_file(5) end, 'Go to file 5' },
     },
+    i = {
+        'Indent',
+        b = { ':GuessIndent<cr>', 'Indent buffer' },
+    },
     l = {
         'Lazy',
         l = { ':Lazy<cr>', 'Lazy' },

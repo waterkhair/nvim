@@ -17,7 +17,7 @@ return {
         end,
         sort_by = 'case_sensitive',
         view = {
-            width = 35,
+            width = 40,
         },
         renderer = {
             group_empty = true,
