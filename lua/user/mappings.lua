@@ -73,6 +73,17 @@ which_key.register({
         'Mason',
         m = { ':Mason<cr>', 'Open mason' },
     },
+    n = {
+        'Noice',
+        a = { ':NoiceDismiss<cr>', 'Dismiss all' },
+        l = { ':NoiceLast<cr>', 'Show last' },
+        e = { ':NoiceErrors<cr>', 'Show errors' },
+        D = { ':NoiceEnable<cr>', 'Enable noice' },
+        d = { ':NoiceDisable<cr>', 'Disable noice' },
+        n = { ':Noice<cr>', 'Show history' },
+        s = { ':NoiceStats<cr>', 'Show debugging stats' },
+        t = { ':NoiceTelescope<cr>', 'Message history in Telescope' },
+    },
     p = {
         'Paint',
         c = { ':colorscheme catppuccin<cr>', 'Catppuccin' },

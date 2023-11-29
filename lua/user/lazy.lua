@@ -28,10 +28,10 @@ require('lazy').setup({
     --{ 'voldikss/vim-floaterm' }, -- Use (neo)vim terminal in the floating/popup window
     --{ 'plugins.toggleterm' }, -- A neovim plugin to persist and toggle multiple terminals
     --{ 'gbprod/yanky.nvim', opts = {}, lazy = true }, -- Improve yank and put functionalities for Neovim
-    --{ 'mfussenegger/nvim-dap' }, -- Debug Adapter Protocol client implementation for Neovim
     --{ 'stevearc/conform.nvim' }, -- Lightweight yet powerful formatter plugin for Neovim
-    --{ 'rcarriga/cmp-dap' }, -- nvim-cmp source for nvim-dap REPL and nvim-dap-ui buffers
+    --{ 'mfussenegger/nvim-dap' }, -- Debug Adapter Protocol client implementation for Neovim
     --{ 'rcarriga/nvim-dap-ui' }, -- A UI for nvim-dap which provides a good out of the box configuration
+    --{ 'rcarriga/cmp-dap' }, -- nvim-cmp source for nvim-dap REPL and nvim-dap-ui buffers
     --{ 'CosmicNvim/cosmic-ui' }, -- Provide a quick and easy way to create a Cosmic UI experience with Neovim!
     --{ 'theHamsta/nvim-dap-virtual-text' }, -- Adds virtual text support to nvim-dap. nvim-treesitter is used to find variable definitions
     --{ 'jay-babu/mason-nvim-dap.nvim' }, -- Bridges mason.nvim with the nvim-dap plugin - making it easier to use both plugins together
