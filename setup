@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Set profile path
+PROFILE='.bash_profile'
+if [ -f '~/.profile' ]; then
+    PROFILE='.profile'
+fi
+
+# Set messages to print
+COPYING_PROFILE="Copying $PROFILE to ~/$PROFILE"
+PROFILE_COPIED="$PROFILE copied to ~/$PROFILE successfully"
+COPYING_TMUX='Copying .tmux.conf to ~/.tmux.conf'
+TMUX_COPIED='.tmux.conf copied to ~/.tmux.conf successfully'
+USAGE="Usage: $(basename $0) [-p] [-t]"
+
+# Copy both files by default
+if [ "$#" -lt 1 ]; then
+    echo $COPYING_PROFILE
+    cp ./$PROFILE ~/$PROFILE
+    echo $PROFILE_COPIED
+    echo $COPYING_TMUX
+    cp .tmux.conf ~/
+    echo $TMUX_COPIED
+    exit 1
+fi
+
+# Parse arguments
+while getopts 'pth' opt; do
+    case "$opt" in
+        p)
+            echo $COPYING_PROFILE
+            cp ./$PROFILE ~/$PROFILE
+            echo $PROFILE_COPIED
+            ;;
+        t)
+            echo $COPYING_TMUX
+            cp .tmux.conf ~/
+            echo $TMUX_COPIED
+            ;;
+        h)
+            echo $USAGE
+            ;;
+        ?)
+            echo -e 'Invalid command option'
+            exit 1
+            ;;
+    esac
+done
+shift "$(($OPTIND -1))"
+
