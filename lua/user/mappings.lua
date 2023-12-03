@@ -133,6 +133,8 @@ which_key.register({
     ['<c-\\>'] = { ':FTermToggle<cr>', 'Toggle terminal' },
     ['<c-d>'] = { '<C-d>zz', 'Move half page down but keep cursor centered' },
     ['<c-u>'] = { '<C-u>zz', 'Move half page up but keep cursor centered' },
+    ['<Tab>'] = { ':BufferLineCycleNext<cr>', 'Next buffer' },
+    ['<S-Tab>'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },
     ['[d'] = { vim.diagnostic.goto_prev, 'Go to previous diagnostic' },
     [']d'] = { vim.diagnostic.goto_next, 'Go to previous diagnostic' },
     ['[b'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },
@@ -162,6 +164,7 @@ which_key.register({
 which_key.register({
     K = {':m \'<-2<CR>gv=gv', 'Move selected line down' },
     J = {':m \'>+1<CR>gv=gv', 'Move selected line up' },
+    P = { '"*p', 'Paste from clipbord' },
     Y = { '"*y', 'Yank to clipbord' },
 }, {
     mode = 'v',
