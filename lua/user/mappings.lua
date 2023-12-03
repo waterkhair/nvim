@@ -84,6 +84,7 @@ which_key.register({
         s = { ':NoiceStats<cr>', 'Show debugging stats' },
         t = { ':NoiceTelescope<cr>', 'Message history in Telescope' },
     },
+    P = { '"*p', 'Paste from clipbord' },
     p = {
         'Paint',
         c = { ':colorscheme catppuccin<cr>', 'Catppuccin' },
@@ -161,6 +162,7 @@ which_key.register({
 which_key.register({
     K = {':m \'<-2<CR>gv=gv', 'Move selected line down' },
     J = {':m \'>+1<CR>gv=gv', 'Move selected line up' },
+    Y = { '"*y', 'Yank to clipbord' },
 }, {
     mode = 'v',
 })
