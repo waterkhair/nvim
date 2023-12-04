@@ -9,6 +9,9 @@ local border_opts = {
     winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
 }
 
+luasnip.filetype_extend('typescript', { 'tsdoc' })
+luasnip.filetype_extend('javascript', { 'jsdoc' })
+luasnip.filetype_extend('lua', { 'luadoc' })
 from_vscode.lazy_load()
 cmp.setup({
     preselect = cmp.PreselectMode.None,

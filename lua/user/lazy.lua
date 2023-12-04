@@ -58,8 +58,8 @@ require('lazy').setup({
     { 'L3MON4D3/LuaSnip', lazy = true }, -- Snippets
     { 'github/copilot.vim' }, -- Uses OpenAI Codex to suggest code and entire functions in real-time right from your editor
     { 'onsails/lspkind.nvim' }, -- Adds vscode-like pictograms to neovim built-in lsp:
-    { 'saadparwaiz1/cmp_luasnip', lazy = true }, -- luasnip completion source for nvim-cmp.
-    { 'rafamadriz/friendly-snippets', lazy = true }, -- Snippets collection for a set of different programming languages
+    { 'saadparwaiz1/cmp_luasnip' }, -- luasnip completion source for nvim-cmp.
+    { 'rafamadriz/friendly-snippets' }, -- Snippets collection for a set of different programming languages
     { 'nvimtools/none-ls.nvim', lazy = true }, -- null-ls.nvim Reloaded, maintained by the community
     { 'NMAC427/guess-indent.nvim', opts = { filetype_exclude = { 'Nvimtree' } } }, -- Blazing fast indentation style detection for Neovim written in Lua
 
