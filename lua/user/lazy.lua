@@ -74,6 +74,7 @@ require('lazy').setup({
     { 'theprimeagen/harpoon', lazy = true }, -- Getting you where you want with the fewest keystrokes
     { 'mbbill/undotree' }, -- Visualizes the undo history and makes it easy to browse and switch between different undo branches
     { 'moll/vim-bbye' }, -- Allows you to do delete buffers (close files) without closing your windows or messing up your layout
+    { 'christoomey/vim-tmux-navigator' }, -- Will allow you to navigate seamlessly between vim and tmux splits
     require('plugins.tree'), -- A File Explorer For Neovim
     require('plugins.bufferline'), -- A snazzy buffer line (with tabpage integration) for Neovim built using lua
     require('plugins.lualine'), -- A blazing fast and easy to configure Neovim statusline
