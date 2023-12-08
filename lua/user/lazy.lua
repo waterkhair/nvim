@@ -1,5 +1,8 @@
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
+-- Leader key = space
+vim.g.mapleader = ' '
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     'git',
@@ -14,6 +17,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+    { import = 'plugins' },
+    { import = 'plugins.lsp' },
     -- Interesting plugins to review
     --{ 'folke/neodev.nvim' }, -- Setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API
     --{ 'stevearc/dressing.nvim' }, -- Override vim.ui.select and vim.ui.input with improvements upon the default behavior
@@ -37,47 +42,6 @@ require('lazy').setup({
     --{ 'jay-babu/mason-nvim-dap.nvim' }, -- Bridges mason.nvim with the nvim-dap plugin - making it easier to use both plugins together
     --{ 'nvim-neotest/neotest' }, -- An extensible framework for interacting with tests within NeoVim
     --{ 'lukas-reineke/indent-blankline.nvim' }, -- Adds indentation guides to Neovim
-
-    -- Themes
-    { 'nvim-lua/plenary.nvim' }, -- All the lua functions I don't want to write twice.
-    require('plugins.catppuccin'), -- Catppuccin for (Neo)vim
-    require('plugins.rose_pine'), -- All natural pine, faux fur and a bit of soho vibes for the classy minimalist
-    require('plugins.tokyonight'), -- A dark and light Neovim theme written in Lua
-    require('plugins.noice'), -- Completely replaces the UI for messages, cmdline and the popupmenu
-    require('plugins.notify'), -- A fancy, configurable, notification manager for NeoVim
-
-    -- Fuzy Finder
-    require('plugins.telescope'), -- Highly extendable fuzzy finder over lists
-
-    -- Autocomplete
-    require('plugins.nvim_cmp'), -- A completion engine plugin for neovim written in Lua
-    require('plugins.none_ls'), -- null-ls.nvim Reloaded, maintained by the community
-    { 'github/copilot.vim' }, -- Uses OpenAI Codex to suggest code and entire functions in real-time right from your editor
-    { 'onsails/lspkind.nvim' }, -- Adds vscode-like pictograms to neovim built-in lsp:
-    { 'NMAC427/guess-indent.nvim', opts = { filetype_exclude = { 'Nvimtree' } } }, -- Blazing fast indentation style detection for Neovim written in Lua
-
-    -- Coding
-    require('plugins.lsp.lspconfig'), -- Configs for the Nvim LSP client
-    { 'numToStr/Comment.nvim', opts = {} }, -- Smart and Powerful commenting plugin for neovim
-    require('plugins.treesitter'), -- Provides a simple and easy way to use the interface for tree-sitter
-    require('plugins.nvim_ufo'), -- Makes Neovim's fold look modern and keep high performance
-
-    -- Navigation
-    { 'theprimeagen/harpoon', lazy = true }, -- Getting you where you want with the fewest keystrokes
-    { 'mbbill/undotree' }, -- Visualizes the undo history and makes it easy to browse and switch between different undo branches
-    { 'moll/vim-bbye' }, -- Allows you to do delete buffers (close files) without closing your windows or messing up your layout
-    { 'christoomey/vim-tmux-navigator' }, -- Will allow you to navigate seamlessly between vim and tmux splits
-    require('plugins.bufferline'), -- A snazzy buffer line (with tabpage integration) for Neovim built using lua
-    require('plugins.tree'), -- A File Explorer For Neovim
-    require('plugins.lualine'), -- A blazing fast and easy to configure Neovim statusline
-    require('plugins.which_key'), -- Displays a popup with possible key bindings
-
-    -- Utils
-    require('plugins.lsp.mason'), -- Portable package manager for Neovim that runs everywhere Neovim runs
-    require('plugins.gitsigns'), -- Super fast git decorations implemented purely in Lua
-    require('plugins.fterm'), -- No-nonsense floating terminal plugin for neovim
-    { 'williamboman/mason.nvim', opts = {} }, -- Portable package manager for Neovim that runs everywhere Neovim runs
-    { 'kdheepak/lazygit.nvim', lazy = true }, -- Plugin for calling lazygit from within neovim
-    { 'dstein64/vim-startuptime' }, -- A plugin for viewing vim and nvim startup event timing information
+    --{ 'nvim-lua/plenary.nvim' }, -- All the lua functions I don't want to write twice.
 })
 

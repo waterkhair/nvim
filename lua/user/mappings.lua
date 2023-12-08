@@ -4,9 +4,6 @@ local ufo = require('ufo')
 local ui = require('harpoon.ui')
 local which_key = require('which-key')
 
--- Leader key = space
-vim.g.mapleader = ' '
-
 -- Which key mappings
 which_key.register({
     b = {
