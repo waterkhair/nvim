@@ -1,80 +1,64 @@
 -- A blazing fast and easy to configure Neovim statusline
 return {
     'nvim-lualine/lualine.nvim',
-    dependencies = {
-        'nvim-tree/nvim-web-devicons',
-    },
-    opts = {
-        options = {
-            disabled_filetypes = {
-                statusline = {
-                    'NvimTree',
-                },
-                winbar = {
-                    'NvimTree',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+        local noice = require('noice')
+
+        require('lualine').setup({
+            options = {
+                disabled_filetypes = {
+                    statusline = { 'NvimTree' },
+                    winbar = { 'NvimTree' },
                 },
             },
-        },
-        sections = {
-            lualine_a = {
-                'mode',
-            },
-            lualine_b = {
-                'branch',
-                'diff',
-                'filename',
-                {
-                    'diagnostics',
-                    sources = {
-                        'nvim_lsp',
-                    },
-                    sections = {
-                        'error',
-                        'warn',
-                        'info',
-                        'hint',
+            sections = {
+                lualine_a = { { 'filename', path = 1 } },
+                lualine_b = { 'progress' },
+                lualine_c = {
+                    'location',
+                    {
+                        'diagnostics',
+                        sources = { 'nvim_lsp' },
+                        sections = { 'error', 'warn', 'info', 'hint' },
                     },
                 },
+                lualine_x = { 'filetype' },
+                lualine_y = { 'encoding', 'fileformat' },
+                lualine_z = { 'mode' },
             },
-            lualine_c = {
-                'location',
-            },
-            lualine_y = {
-                'progress',
-            },
-            lualine_z = {
-                'datetime',
-            },
-        },
-        inactive_sections = {
-            lualine_a = {
-                'mode',
-            },
-            lualine_b = { },
-            lualine_c = { },
-            lualine_x = { },
-            lualine_y = { },
-            lualine_z = {
-                'datetime',
-            },
-        },
-        winbar = {
-            lualine_b = {
-                {
-                    'filename',
-                    path = 1,
+            inactive_sections = {
+                lualine_a = { { 'filename', path = 1 } },
+                lualine_b = { 'progress' },
+                lualine_c = {
+                    {
+                        'diagnostics',
+                        sources = { 'nvim_lsp' },
+                        sections = { 'error', 'warn', 'info', 'hint' },
+                    },
                 },
+                lualine_x = { 'filetype' },
+                lualine_y = { 'encoding' },
+                lualine_z = { 'fileformat' },
             },
-        },
-        inactive_winbar = {
-            lualine_y = {
-                {
-                    'filename',
-                    path = 1,
-                },
+            winbar = {
+                lualine_a = { { noice.api.status.command.get, cond = noice.api.status.command.has } },
+                lualine_b = { },
+                lualine_c = { { noice.api.status.search.get, cond = noice.api.status.search.has } },
+                lualine_x = { },
+                lualine_y = { 'diff' },
+                lualine_z = { 'branch' },
             },
-        },
-    },
-    lazy = true,
+            inactive_winbar = {
+                -- lualine_a = { 'buffers' },
+                lualine_a = { { noice.api.status.command.get, cond = noice.api.status.command.has } },
+                lualine_b = { },
+                lualine_c = { },
+                lualine_x = { },
+                lualine_y = { },
+                lualine_z = { },
+            },
+        })
+    end,
 }
 

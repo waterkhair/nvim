@@ -39,7 +39,7 @@ require('lazy').setup({
     --{ 'lukas-reineke/indent-blankline.nvim' }, -- Adds indentation guides to Neovim
 
     -- Themes
-    { 'nvim-lua/plenary.nvim', lazy = true }, -- All the lua functions I don't want to write twice.
+    { 'nvim-lua/plenary.nvim' }, -- All the lua functions I don't want to write twice.
     require('plugins.catppuccin'), -- Catppuccin for (Neo)vim
     require('plugins.rose_pine'), -- All natural pine, faux fur and a bit of soho vibes for the classy minimalist
     require('plugins.tokyonight'), -- A dark and light Neovim theme written in Lua
@@ -47,25 +47,17 @@ require('lazy').setup({
     require('plugins.notify'), -- A fancy, configurable, notification manager for NeoVim
 
     -- Fuzy Finder
-    { 'nvim-telescope/telescope.nvim', lazy = true }, -- Highly extendable fuzzy finder over lists
+    require('plugins.telescope'), -- Highly extendable fuzzy finder over lists
 
     -- Autocomplete
-    { 'hrsh7th/cmp-buffer' }, -- nvim-cmp source for buffer words
-    { 'hrsh7th/cmp-path' }, -- nvim-cmp source for filesystem paths
-    { 'hrsh7th/cmp-nvim-lua' }, -- nvim-cmp source for neovim Lua API
-    { 'hrsh7th/cmp-nvim-lsp' }, -- nvim-cmp source for neovim's built-in language server client
-    { 'hrsh7th/nvim-cmp' }, -- A completion engine plugin for neovim written in Lua
-    { 'L3MON4D3/LuaSnip', lazy = true }, -- Snippets
+    require('plugins.nvim_cmp'), -- A completion engine plugin for neovim written in Lua
+    require('plugins.none_ls'), -- null-ls.nvim Reloaded, maintained by the community
     { 'github/copilot.vim' }, -- Uses OpenAI Codex to suggest code and entire functions in real-time right from your editor
     { 'onsails/lspkind.nvim' }, -- Adds vscode-like pictograms to neovim built-in lsp:
-    { 'saadparwaiz1/cmp_luasnip' }, -- luasnip completion source for nvim-cmp.
-    { 'rafamadriz/friendly-snippets' }, -- Snippets collection for a set of different programming languages
-    { 'nvimtools/none-ls.nvim', lazy = true }, -- null-ls.nvim Reloaded, maintained by the community
     { 'NMAC427/guess-indent.nvim', opts = { filetype_exclude = { 'Nvimtree' } } }, -- Blazing fast indentation style detection for Neovim written in Lua
 
     -- Coding
-    { 'neovim/nvim-lspconfig', lazy = true }, -- Configs for the Nvim LSP client
-    { 'williamboman/mason-lspconfig.nvim', lazy = true }, -- Bridges mason.nvim with the lspconfig plugin
+    require('plugins.lsp.lspconfig'), -- Configs for the Nvim LSP client
     { 'numToStr/Comment.nvim', opts = {} }, -- Smart and Powerful commenting plugin for neovim
     require('plugins.treesitter'), -- Provides a simple and easy way to use the interface for tree-sitter
     require('plugins.nvim_ufo'), -- Makes Neovim's fold look modern and keep high performance
@@ -75,16 +67,17 @@ require('lazy').setup({
     { 'mbbill/undotree' }, -- Visualizes the undo history and makes it easy to browse and switch between different undo branches
     { 'moll/vim-bbye' }, -- Allows you to do delete buffers (close files) without closing your windows or messing up your layout
     { 'christoomey/vim-tmux-navigator' }, -- Will allow you to navigate seamlessly between vim and tmux splits
-    require('plugins.tree'), -- A File Explorer For Neovim
     require('plugins.bufferline'), -- A snazzy buffer line (with tabpage integration) for Neovim built using lua
+    require('plugins.tree'), -- A File Explorer For Neovim
     require('plugins.lualine'), -- A blazing fast and easy to configure Neovim statusline
     require('plugins.which_key'), -- Displays a popup with possible key bindings
 
     -- Utils
+    require('plugins.lsp.mason'), -- Portable package manager for Neovim that runs everywhere Neovim runs
+    require('plugins.gitsigns'), -- Super fast git decorations implemented purely in Lua
+    require('plugins.fterm'), -- No-nonsense floating terminal plugin for neovim
     { 'williamboman/mason.nvim', opts = {} }, -- Portable package manager for Neovim that runs everywhere Neovim runs
     { 'kdheepak/lazygit.nvim', lazy = true }, -- Plugin for calling lazygit from within neovim
     { 'dstein64/vim-startuptime' }, -- A plugin for viewing vim and nvim startup event timing information
-    { 'numToStr/FTerm.nvim', lazy = true }, -- No-nonsense floating terminal plugin for neovim
-    { 'lewis6991/gitsigns.nvim', lazy = true }, -- Super fast git decorations implemented purely in Lua
 })
 
