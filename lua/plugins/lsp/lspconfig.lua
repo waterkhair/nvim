@@ -17,7 +17,7 @@ return {
             opts.buffer = bufnr
 
             opts.desc = 'Show LSP references'
-            keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts) -- show definition, references
+            keymap.set('n', 'gr', '<cmd>Telescope lsp_references show_line=false<CR>', opts) -- show definition, references
 
             opts.desc = 'Go to declaration'
             keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -27,6 +27,9 @@ return {
 
             opts.desc = 'Show LSP implementations'
             keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', opts)
+
+            opts.desc = 'Show LSP information'
+            keymap.set('n', 'gI', '<cmd>LspInfo<CR>', opts)
 
             opts.desc = 'Show LSP type definitions'
             keymap.set('n', 'gt', '<cmd>Telescope lsp_type_definitions<CR>', opts)
@@ -56,9 +59,6 @@ return {
 
             opts.desc = 'Show documentation for what is under cursor'
             keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-
-            opts.desc = 'LSP information'
-            keymap.set('n', '<leader>di', ':LspInfo<CR>', opts)
 
             opts.desc = 'Format current file'
             keymap.set('n', '<leader>sf', function() vim.lsp.buf.format({ async = true }) end, opts)
