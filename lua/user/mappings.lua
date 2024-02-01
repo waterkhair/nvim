@@ -1,5 +1,4 @@
 local mark = require('harpoon.mark')
-local noice_lsp = require('noice.lsp')
 local ufo = require('ufo')
 local ui = require('harpoon.ui')
 local which_key = require('which-key')
@@ -52,17 +51,6 @@ which_key.register({
     m = {
         'Mason',
         m = { ':Mason<cr>', 'Open mason' },
-    },
-    n = {
-        'Noice',
-        a = { ':NoiceDismiss<cr>', 'Dismiss all' },
-        l = { ':NoiceLast<cr>', 'Show last' },
-        e = { ':NoiceErrors<cr>', 'Show errors' },
-        D = { ':NoiceEnable<cr>', 'Enable noice' },
-        d = { ':NoiceDisable<cr>', 'Disable noice' },
-        h = { ':Noice<cr>', 'Show history' },
-        s = { ':NoiceStats<cr>', 'Show debugging stats' },
-        t = { ':NoiceTelescope<cr>', 'Message history in Telescope' },
     },
     p = {
         'Paint',
@@ -143,20 +131,6 @@ which_key.register({
     J = { 'mzJ`z', 'Append next line to current line' },
     N = { 'Nzzzv', 'Search next but keep cursor centered' },
     n = { 'nzzzv', 'Search previous but keep cursor centered' },
-})
-which_key.register({
-    ['<c-f>'] = { function()
-        if not noice_lsp.scroll(4) then
-            return "<c-f>"
-        end
-    end, 'Scroll down' },
-    ['<c-b>'] = { function()
-        if not noice_lsp.scroll(-4) then
-            return "<c-b>"
-        end
-    end, 'Scroll up' },
-}, {
-    expr = true,
 })
 which_key.register({
     K = {':m \'<-2<CR>gv=gv', 'Move selected line down' },

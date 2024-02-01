@@ -3,8 +3,6 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-        local noice = require('noice')
-
         require('lualine').setup({
             options = {
                 disabled_filetypes = {
@@ -42,16 +40,16 @@ return {
                 lualine_z = { 'fileformat' },
             },
             winbar = {
-                lualine_a = { { noice.api.status.command.get, cond = noice.api.status.command.has } },
+                lualine_a = { },
                 lualine_b = { },
-                lualine_c = { { noice.api.status.search.get, cond = noice.api.status.search.has } },
+                lualine_c = { },
                 lualine_x = { },
                 lualine_y = { 'diff' },
                 lualine_z = { 'branch' },
             },
             inactive_winbar = {
                 -- lualine_a = { 'buffers' },
-                lualine_a = { { noice.api.status.command.get, cond = noice.api.status.command.has } },
+                lualine_a = { },
                 lualine_b = { },
                 lualine_c = { },
                 lualine_x = { },

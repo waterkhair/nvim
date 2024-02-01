@@ -27,7 +27,6 @@ return {
 
         telescope.load_extension('fzf')
         telescope.load_extension('lazygit')
-        telescope.load_extension('noice')
 
         which_key.register({
             f = {
