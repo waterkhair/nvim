@@ -15,8 +15,17 @@ return {
             api.config.mappings.default_on_attach(bufnr)
             vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
         end,
+        hijack_cursor = true,
+        hijack_unnamed_buffer_when_opening = true,
+        disable_netrw = true,
+        auto_reload_on_write = false,
+        select_prompts = true,
         sort_by = 'case_sensitive',
         view = {
+            centralize_selection = true,
+            debounce_delay = 100,
+            number = true,
+            relativenumber = true,
             width = 40,
         },
         renderer = {

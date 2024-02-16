@@ -1,6 +1,4 @@
-local mark = require('harpoon.mark')
 local ufo = require('ufo')
-local ui = require('harpoon.ui')
 local which_key = require('which-key')
 
 -- Which key mappings
@@ -8,7 +6,9 @@ which_key.register({
     b = {
         'Buffers',
         a = { ':bufdo :Bdelete<cr>', 'Close all buffers' },
-        c = { ':Bdelete<cr>', 'Close curret buffer' },
+        c = { ':Bdelete<cr>', 'Close current buffer' },
+        C = { ':Bdelete!<cr>', 'Force close current buffer' },
+        e = { ':enew<cr>', 'Ediot new buffer' },
         l = { ':BufferLineCloseLeft<cr>', 'Close all buffers to the left' },
         n = { ':bn<cr>', 'Next buffer' },
         o = { ':BufferLineCloseOthers<cr>', 'Close all other buffers' },
@@ -29,16 +29,6 @@ which_key.register({
     g = {
         'Git',
         g = { ':LazyGit<cr>', 'Open LazyGit' },
-    },
-    h = {
-        'Harpoon',
-        a = { mark.add_file, 'Add file' },
-        e = { ui.toggle_quick_menu, 'Toggle quick menu' },
-        ['1'] = { function() ui.nav_file(1) end, 'Go to file 1' },
-        ['2'] = { function() ui.nav_file(2) end, 'Go to file 2' },
-        ['3'] = { function() ui.nav_file(3) end, 'Go to file 3' },
-        ['4'] = { function() ui.nav_file(4) end, 'Go to file 4' },
-        ['5'] = { function() ui.nav_file(5) end, 'Go to file 5' },
     },
     i = {
         'Indent',
@@ -126,6 +116,8 @@ which_key.register({
     [']b'] = { ':BufferLineCycleNext<cr>', 'Next buffer' },
     ['[B'] = { ':BufferLineMovePrev<cr>', 'Move buffer to the left' },
     [']B'] = { ':BufferLineMoveNext<cr>', 'Move buffer to the right' },
+    ['[q'] = { ':cp<cr>', 'Previous quickfix item' },
+    [']q'] = { ':cn<cr>', 'Next quickfix item' },
     ['[t'] = { ':tabn<cr>', 'Go to next tab' },
     [']t'] = { ':tabp<cr>', 'Go to previous tab' },
     J = { 'mzJ`z', 'Append next line to current line' },
