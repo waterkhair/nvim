@@ -1,3 +1,4 @@
+local oil = require('oil')
 local ufo = require('ufo')
 local which_key = require('which-key')
 
@@ -41,6 +42,10 @@ which_key.register({
     m = {
         'Mason',
         m = { ':Mason<cr>', 'Open mason' },
+    },
+    o = {
+        'Oil',
+        o = { function() oil.open_float() end, 'Open Oil' },
     },
     p = {
         'Paint',
