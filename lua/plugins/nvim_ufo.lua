@@ -9,6 +9,6 @@ return {
             return { 'treesitter', 'indent' }
         end
     },
-    lazy = true,
+    run = ':TSUpdate',
 }
 
