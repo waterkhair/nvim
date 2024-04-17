@@ -23,10 +23,16 @@ return {
                     },
                 },
             },
+            extensions = {
+                quicknote = {
+                    defaultScope = 'CurrentBuffer',
+                },
+            },
         })
 
         telescope.load_extension('fzf')
         telescope.load_extension('lazygit')
+        telescope.load_extension('quicknote')
 
         which_key.register({
             f = {
@@ -36,6 +42,8 @@ return {
                 s = { builtin.live_grep, 'Find string in cwd' },
                 g = { builtin.git_files, 'Find git files' },
                 b = { builtin.buffers, 'Find buffers' },
+                q = { builtin.quickfix, 'Find quickfix' },
+                Q = { builtin.quickfixhistory, 'Find quickfix history' },
                 r = { builtin.oldfiles, 'Find recent opened files' },
                 h = { builtin.search_history, 'Search history' },
                 m = { builtin.marks, 'Find marks' },

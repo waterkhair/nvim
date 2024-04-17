@@ -36,7 +36,7 @@ return {
         which_key.register({
             h = {
                 'Harpoon',
-                a = { function() harpoon:list():append() end, 'Add file' },
+                a = { function() harpoon:list():add() end, 'Add file' },
                 d = { function() harpoon:list():remove() end, 'Remove file' },
                 e = { function() toggle_telescope(harpoon:list()) end, 'Toggle quick menu' },
                 n = { function() harpoon:list():next() end, 'Go to next file' },
