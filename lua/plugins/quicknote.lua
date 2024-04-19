@@ -15,7 +15,7 @@ return {
         -- Which key mappings
         which_key.register({
             n = {
-                'Quicknote',
+                'Notes',
                 c = {
                     'Create note',
                     l = { function() quicknote.NewNoteAtCurrentLine()  quicknote.OpenNoteAtCurrentLine() end, 'New line note' },

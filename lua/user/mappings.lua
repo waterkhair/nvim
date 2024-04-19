@@ -4,80 +4,54 @@ local which_key = require('which-key')
 
 -- Which key mappings
 which_key.register({
-    b = {
-        'Buffers',
-        a = { ':bufdo :Bdelete<cr>', 'Close all buffers' },
-        c = { ':Bdelete<cr>', 'Close current buffer' },
-        C = { ':Bdelete!<cr>', 'Force close current buffer' },
-        e = { ':enew<cr>', 'Ediot new buffer' },
-        l = { ':BufferLineCloseLeft<cr>', 'Close all buffers to the left' },
-        n = { ':bn<cr>', 'Next buffer' },
-        o = { ':BufferLineCloseOthers<cr>', 'Close all other buffers' },
-        p = { ':bp<cr>', 'Next buffer' },
-        r = { ':BufferLineCloseRight<cr>', 'Close all buffers to the right' },
+    E = {
+        'Edit',
+        i = { ':GuessIndent<cr>', 'Indent file' },
+        p = { '"*p', 'Paste from clipbord' },
+        y = { '"*y', 'Yank to clipbord' },
+        z = { ufo.openAllFolds, 'Unfold all' },
+        Z = { ufo.closeAllFolds, 'Fold all' },
     },
-    c = { 'Code actions' },
-    d = {
-        'Diagnostics',
-        S = { vim.diagnostic.open_float, 'Open floag diagnostic' },
-        L = { vim.diagnostic.setloclist, 'Open diagnostics list' },
-    },
-    e = {
-        'File explorer',
-        c = { ':NvimTreeClose<cr>', 'Close file explorer' },
-        o = { ':NvimTreeOpen<cr>', 'Open file explorer' },
-    },
-    g = {
-        'Git',
-        g = { ':LazyGit<cr>', 'Open LazyGit' },
-    },
-    i = {
-        'Indent',
-        b = { ':GuessIndent<cr>', 'Indent buffer' },
-    },
-    l = {
-        'Lazy',
-        l = { ':Lazy<cr>', 'Lazy' },
-    },
-    m = {
-        'Mason',
-        m = { ':Mason<cr>', 'Open mason' },
-    },
-    o = {
-        'Oil',
-        o = { function() oil.open_float() end, 'Open Oil' },
-    },
-    p = {
-        'Paint',
-        c = { ':colorscheme catppuccin<cr>', 'Catppuccin' },
-        t = { ':colorscheme tokyonight<cr>', 'Tokyo Night' },
-        r = { ':colorscheme rose-pine<cr>', 'Rose Pine' },
-    },
-    P = { '"*p', 'Paste from clipbord' },
-    q = {
-        'Quit',
-        a = { ':qa<cr>', 'Quit all' },
-        c = { ':cq<cr>', 'Quit without saving' },
-        e = { ':x<cr>', 'Write and quit (if modified)' },
-        h = { ':noh<cr>', 'Quit highlights' },
-        q = { ':q<cr>', 'Quit' },
-        Q = { ':q!<cr>', 'Force quit' },
-        w = { ':wq<cr>', 'Write and quit' },
-        W = { ':wq!<cr>', 'Force write and quit' },
-    },
-    r = { 'Rename' },
-    R = {
-        'Replace',
-        c = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', 'Replace all occurrences of current word' },
-    },
-    s = {
+    F = {
         'File',
-        o = { ':so<cr>', 'Source file' },
-        s = { ':w<cr>', 'Save file' },
-        S = { ':w!<cr>', 'Force save file' },
+        c = { ':wq<cr>', 'Save and close' },
+        C = { ':wq!<cr>', 'Force save and close' },
+        o = { ':so<cr>', 'Source' },
+        q = { ':q<cr>', 'Quit' },
+        s = { ':w<cr>', 'Save' },
+        S = { ':w!<cr>', 'Force save' },
+        x = { ':x<cr>', 'Save and close (if modified)' },
     },
-    t = {
-        'Tabs',
+    O = {
+        'Open',
+        e = { ':NvimTreeOpen<cr>', 'File explorer' },
+        g = { ':LazyGit<cr>', 'LazyGit' },
+        h = { ':noh<cr>', 'Highlights' },
+        l = { ':Lazy<cr>', 'Lazy' },
+        m = { ':Mason<cr>', 'Mason' },
+        o = { function() oil.open_float() end, 'Oil' },
+        t = { ':FTermOpen<cr>', 'Terminal' },
+        u = { ':UndotreeShow', 'UndotreeTogle' },
+    },
+    Q = {
+        'Q',
+        e = { ':NvimTreeClose<cr>', 'File explorer' },
+        E = { ':cq<cr>', 'Exit' },
+        n = { ':qa<cr>', 'Quit Nvim' },
+        N = { ':qa!<cr>', 'Force Quit Nvim' },
+        u = { ':UndotreeHide', 'UndotreeTogle' },
+    },
+    S = {
+        'Settings',
+        t = {
+            'Theme',
+            c = { ':colorscheme catppuccin<cr>', 'Catppuccin' },
+            t = { ':colorscheme tokyonight<cr>', 'Tokyo Night' },
+            r = { ':colorscheme rose-pine<cr>', 'Rose Pine' },
+        },
+    },
+    T = {
+       'Tabs',
         ['1'] = { '1gt', 'Go to tab 1' },
         ['2'] = { '2gt', 'Go to tab 2' },
         ['3'] = { '3gt', 'Go to tab 3' },
@@ -92,15 +66,11 @@ which_key.register({
         s = { ':tabs<cr>', 'List all tabs' },
         T = { '<c-w>T', 'Open buffer new tab' },
     },
-    u = {
-        'Undotree',
-        t = { vim.cmd.UndotreeToggle, 'Open UndotreeTogle' },
-    },
-    w = { 'Workspace' },
-    z = {
-        'Folding',
-        R = { ufo.openAllFolds, 'Open all folds' },
-        M = { ufo.closeAllFolds, 'Close all folds' },
+    W = { 'Workspace' },
+    d = {
+        'Diagnostics',
+        S = { vim.diagnostic.open_float, 'Open floag diagnostic' },
+        L = { vim.diagnostic.setloclist, 'Open diagnostics list' },
     },
 }, {
     prefix = '<leader>',
@@ -138,7 +108,7 @@ which_key.register({
     mode = 'v',
 })
 which_key.register({
-    ['<c-\\>'] = { '<c-\\><c-n>:FTermToggle<cr>', 'Toggle terminal' }
+    ['<c-\\>'] = { '<c-\\><c-n>:FTermToggle<cr>', 'Toggle terminal' },
 }, {
     mode = 't'
 })

@@ -48,13 +48,12 @@ return {
                 lualine_z = { 'branch' },
             },
             inactive_winbar = {
-                -- lualine_a = { 'buffers' },
                 lualine_a = { },
                 lualine_b = { },
                 lualine_c = { },
                 lualine_x = { },
-                lualine_y = { },
-                lualine_z = { },
+                lualine_y = { 'diff' },
+                lualine_z = { 'branch' },
             },
         })
     end,

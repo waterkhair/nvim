@@ -36,10 +36,10 @@ return {
             keymap.set('n', 'gt', '<cmd>Telescope lsp_type_definitions<CR>', opts)
 
             opts.desc = 'See available code actions'
-            keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts) -- in visual mode will apply to selection
+            keymap.set({ 'n', 'v' }, '<leader>Ec', vim.lsp.buf.code_action, opts) -- in visual mode will apply to selection
 
             opts.desc = 'Smart rename'
-            keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+            keymap.set('n', '<leader>Er', vim.lsp.buf.rename, opts)
 
             opts.desc = 'Show buffer diagnostics'
             keymap.set('n', '<leader>dl', '<cmd>Telescope diagnostics bufnr=0<CR>', opts)
@@ -56,25 +56,25 @@ return {
             keymap.set('n', 'dn', vim.diagnostic.goto_next, opts)
 
             opts.desc = 'Go to signature help'
-            keymap.set('n', '<leader>c-k', vim.lsp.buf.signature_help, opts)
+            keymap.set('n', '<c-k>', vim.lsp.buf.signature_help, opts)
 
             opts.desc = 'Show documentation for what is under cursor'
             keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 
-            opts.desc = 'Format current file'
-            keymap.set('n', '<leader>sf', function() vim.lsp.buf.format({ async = true }) end, opts)
+            opts.desc = 'Format file'
+            keymap.set('n', '<leader>Ef', function() vim.lsp.buf.format({ async = true }) end, opts)
 
             opts.desc = 'Add workspace folder'
-            keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
+            keymap.set('n', '<leader>Wa', vim.lsp.buf.add_workspace_folder, opts)
 
             opts.desc = 'List workspaces'
-            keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
+            keymap.set('n', '<leader>Wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
 
             opts.desc = 'Remove workspace folder'
-            keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+            keymap.set('n', '<leader>Wr', vim.lsp.buf.remove_workspace_folder, opts)
 
             opts.desc = 'Restart LSP'
-            keymap.set('n', '<leader>rs', ':LspRestart<CR>', opts)
+            keymap.set('n', '<leader>Fr', ':LspRestart<CR>', opts)
         end
 
         local capabilities = cmp_nvim_lsp.default_capabilities()

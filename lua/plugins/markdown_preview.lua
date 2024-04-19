@@ -11,7 +11,7 @@ return {
         local which_key = require('which-key')
 
         which_key.register({
-            M = {
+            m = {
                 'Markdown',
                 p = { ':MarkdownPreview<cr>', 'Preview markdown' },
                 s = { ':MarkdownPreviewStop<cr>', 'Stop preview' },

@@ -51,16 +51,20 @@ return {
         which_key.register({
             b = {
                 'Buffers',
+                a = { ':bufdo :Bdelete<cr>', 'Close all buffers' },
+                c = { ':Bdelete<cr>', 'Close current buffer' },
+                C = { ':Bdelete!<cr>', 'Force close current buffer' },
+                e = { ':enew<cr>', 'Edit new buffer' },
+                l = { ':BufferLineCloseLeft<cr>', 'Close all buffers to the left' },
+                n = { ':bn<cr>', 'Next buffer' },
+                o = { ':BufferLineCloseOthers<cr>', 'Close all other buffers' },
+                p = { ':bp<cr>', 'Previous buffer' },
+                r = { ':BufferLineCloseRight<cr>', 'Close all buffers to the right' },
                 s = {
                     'Sort buffers',
                     d = { ':BufferLineSortByDirectory<cr>', 'Sort buffers by extension' },
                     e = { ':BufferLineSortByExtension<cr>', 'Sort buffers by extension' },
                 },
-                c = { ':Bdelete<cr>', 'Close curret buffer' },
-                o = { ':BufferLineCloseOthers<cr>', 'Close all other buffers' },
-                a = { ':bufdo :Bdelete<cr>', 'Close all buffers' },
-                l = { ':BufferLineCloseLeft<cr>', 'Close all buffers to the left' },
-                r = { ':BufferLineCloseRight<cr>', 'Close all buffers to the right' },
             },
         }, {
             prefix = '<leader>',
