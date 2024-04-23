@@ -6,6 +6,7 @@ local which_key = require('which-key')
 which_key.register({
     E = {
         'Edit',
+        a = { 'gg<Esc>VG', 'Select all' },
         i = { ':GuessIndent<cr>', 'Indent file' },
         p = { '"*p', 'Paste from clipbord' },
         y = { '"*y', 'Yank to clipbord' },
@@ -84,8 +85,8 @@ which_key.register({
     mode = 'n',
 })
 which_key.register({
-    K = {':m \'<-2<CR>gv=gv', 'Move selected line down' },
-    J = {':m \'>+1<CR>gv=gv', 'Move selected line up' },
+    K = { ':m \'<-2<CR>gv=gv', 'Move selected line down' },
+    J = { ':m \'>+1<CR>gv=gv', 'Move selected line up' },
     P = { '"*p', 'Paste from clipbord' },
     Y = { '"*y', 'Yank to clipbord' },
 }, {
