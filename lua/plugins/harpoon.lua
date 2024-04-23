@@ -6,7 +6,8 @@ return {
         'nvim-lua/plenary.nvim',
         'nvim-telescope/telescope.nvim',
     },
-    config = function()
+    lazy = true,
+    init = function()
         local harpoon = require('harpoon')
         local pickers = require('telescope.pickers')
         local finders = require('telescope.finders')

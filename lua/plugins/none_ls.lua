@@ -1,6 +1,7 @@
 -- null-ls.nvim Reloaded, maintained by the community
 return {
     'nvimtools/none-ls.nvim',
+    lazy = true,
     config = function()
         local null_ls = require('null-ls')
 
@@ -12,6 +13,5 @@ return {
             },
         })
     end,
-    lazy = true,
 }
 

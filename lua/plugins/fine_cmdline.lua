@@ -1,7 +1,8 @@
 return {
     'VonHeikemen/fine-cmdline.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
-    config = function()
+    lazy = false,
+    init = function()
         local which_key = require('which-key')
 
         which_key.register({

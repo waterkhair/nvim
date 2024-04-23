@@ -2,7 +2,7 @@
 return {
     'rose-pine/neovim',
     name = 'rose-pine',
-    priority = 1000,
+    lazy = true,
     config = function()
         local rose_pine = require('rose-pine')
 
@@ -10,6 +10,5 @@ return {
             variant = 'moon',
         })
     end,
-    lazy = true,
 }
 

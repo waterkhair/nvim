@@ -1,6 +1,7 @@
 -- All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
 return {
     'iamcco/markdown-preview.nvim',
+    lazy = true,
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
     ft = { 'markdown' },
     build = function()

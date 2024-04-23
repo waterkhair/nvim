@@ -1,6 +1,7 @@
 return {
     'RutaTang/quicknote.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
+    lazy = true,
     config = function()
         local quicknote = require('quicknote')
         local which_key = require('which-key')

@@ -1,7 +1,8 @@
 -- Super fast git decorations implemented purely in Lua
 return {
     'lewis6991/gitsigns.nvim',
-    config = function()
+    lazy = true,
+    init = function()
         local which_key = require('which-key')
 
         require('gitsigns').setup({
@@ -40,12 +41,13 @@ return {
                         p = { gs.preview_hunk, 'Preview hunk' },
                         b = { function() gs.blame_line { full = true } end, 'Blame line' },
                         d = { gs.diffthis, 'Diff this' },
-                        D = { function() gs.diffthis('~') end, '' },
+                        D = { function() gs.diffthis('~') end, 'Diff ~' },
                         t = { gs.toggle_current_line_blame, 'Toggle current line blame' },
                         T = { gs.toggle_deleted, 'Toggle deleted' },
                     },
                 }, {
                     buffer = bufnr,
+                    mode = 'n',
                     prefix = '<leader>',
                 })
                 which_key.register({

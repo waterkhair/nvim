@@ -5,6 +5,7 @@ return {
     dependencies = {
         'nvim-tree/nvim-web-devicons',
     },
+    lazy = false,
     opts = {
         on_attach = function(bufnr)
             local api = require('nvim-tree.api')

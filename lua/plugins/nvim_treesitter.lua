@@ -13,6 +13,7 @@ return {
             },
         },
     },
+    lazy = false,
     build = ':TSUpdate',
     configs = {
         autotag = {
@@ -103,6 +104,5 @@ return {
             'query',
         },
     },
-    lazy = true,
 }
 

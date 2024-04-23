@@ -34,7 +34,7 @@ which_key.register({
         u = { ':UndotreeShow', 'UndotreeTogle' },
     },
     Q = {
-        'Q',
+        'Quit',
         e = { ':NvimTreeClose<cr>', 'File explorer' },
         E = { ':cq<cr>', 'Exit' },
         n = { ':qa<cr>', 'Quit Nvim' },
@@ -66,31 +66,13 @@ which_key.register({
         s = { ':tabs<cr>', 'List all tabs' },
         T = { '<c-w>T', 'Open buffer new tab' },
     },
-    W = { 'Workspace' },
-    d = {
-        'Diagnostics',
-        S = { vim.diagnostic.open_float, 'Open floag diagnostic' },
-        L = { vim.diagnostic.setloclist, 'Open diagnostics list' },
-    },
 }, {
+    mode = 'n',
     prefix = '<leader>',
 })
 which_key.register({
-    ['<c-\\>'] = { ':FTermToggle<cr>', 'Toggle terminal' },
     ['<c-d>'] = { '<C-d>zz', 'Move half page down but keep cursor centered' },
     ['<c-u>'] = { '<C-u>zz', 'Move half page up but keep cursor centered' },
-    ['<c-h>'] = { ':TmuxNavigateLeft<cr>', 'Move to left tmux pane' },
-    ['<c-j>'] = { ':TmuxNavigateDown<cr>', 'Move to bottom tmux pane' },
-    ['<c-k>'] = { ':TmuxNavigateUp<cr>', 'Move to top tmux pane' },
-    ['<c-l>'] = { ':TmuxNavigateRight<cr>', 'Move to right tmux pane' },
-    ['<Tab>'] = { ':BufferLineCycleNext<cr>', 'Next buffer' },
-    ['<S-Tab>'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },
-    ['[d'] = { vim.diagnostic.goto_prev, 'Go to previous diagnostic' },
-    [']d'] = { vim.diagnostic.goto_next, 'Go to previous diagnostic' },
-    ['[b'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },
-    [']b'] = { ':BufferLineCycleNext<cr>', 'Next buffer' },
-    ['[B'] = { ':BufferLineMovePrev<cr>', 'Move buffer to the left' },
-    [']B'] = { ':BufferLineMoveNext<cr>', 'Move buffer to the right' },
     ['[q'] = { ':cp<cr>', 'Previous quickfix item' },
     [']q'] = { ':cn<cr>', 'Next quickfix item' },
     ['[t'] = { ':tabn<cr>', 'Go to next tab' },
@@ -98,6 +80,8 @@ which_key.register({
     J = { 'mzJ`z', 'Append next line to current line' },
     N = { 'Nzzzv', 'Search next but keep cursor centered' },
     n = { 'nzzzv', 'Search previous but keep cursor centered' },
+}, {
+    mode = 'n',
 })
 which_key.register({
     K = {':m \'<-2<CR>gv=gv', 'Move selected line down' },
@@ -106,10 +90,5 @@ which_key.register({
     Y = { '"*y', 'Yank to clipbord' },
 }, {
     mode = 'v',
-})
-which_key.register({
-    ['<c-\\>'] = { '<c-\\><c-n>:FTermToggle<cr>', 'Toggle terminal' },
-}, {
-    mode = 't'
 })
 

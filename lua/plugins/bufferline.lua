@@ -3,6 +3,7 @@ return {
     'akinsho/bufferline.nvim',
     version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
+    lazy = false,
     config = function()
         local bufferline = require('bufferline')
         local which_key = require('which-key')
@@ -67,7 +68,18 @@ return {
                 },
             },
         }, {
+            mode = 'n',
             prefix = '<leader>',
+        })
+        which_key.register({
+            ['<Tab>'] = { ':BufferLineCycleNext<cr>', 'Next buffer' },
+            ['<S-Tab>'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },
+            ['[b'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },
+            ['[B'] = { ':BufferLineMovePrev<cr>', 'Move buffer to the left' },
+            [']b'] = { ':BufferLineCycleNext<cr>', 'Next buffer' },
+            [']B'] = { ':BufferLineMoveNext<cr>', 'Move buffer to the right' },
+        }, {
+            mode = 'n',
         })
     end,
 }
