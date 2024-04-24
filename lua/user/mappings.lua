@@ -15,10 +15,11 @@ which_key.register({
     },
     F = {
         'File',
-        c = { ':wq<cr>', 'Save and close' },
-        C = { ':wq!<cr>', 'Force save and close' },
+        c = { ':q<cr>', 'Close' },
+        C = { ':q!<cr>', 'Close (Force)' },
+        e = { ':qa<cr>', 'Exit' },
+        E = { ':qa!<cr>', 'Exit (Force)' },
         o = { ':so<cr>', 'Source' },
-        q = { ':q<cr>', 'Quit' },
         s = { ':w<cr>', 'Save' },
         S = { ':w!<cr>', 'Force save' },
         x = { ':x<cr>', 'Save and close (if modified)' },
@@ -37,9 +38,8 @@ which_key.register({
     Q = {
         'Quit',
         e = { ':NvimTreeClose<cr>', 'File explorer' },
-        E = { ':cq<cr>', 'Exit' },
-        n = { ':qa<cr>', 'Quit Nvim' },
-        N = { ':qa!<cr>', 'Force Quit Nvim' },
+        q = { ':q<cr>', 'Close' },
+        Q = { ':q!<cr>', 'Close (Force)' },
         u = { ':UndotreeHide', 'UndotreeTogle' },
     },
     S = {

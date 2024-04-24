@@ -8,15 +8,14 @@ return {
         vim.fn['mkdp#util#install']()
     end,
     config = function()
-        -- let g:mkdp_auto_close = 0
         local which_key = require('which-key')
 
         which_key.register({
             m = {
                 'Markdown',
-                p = { ':MarkdownPreview<cr>', 'Preview markdown' },
-                s = { ':MarkdownPreviewStop<cr>', 'Stop preview' },
-                t = { ':MarkdownPreviewToggle<cr>', 'Toggle preview' },
+                P = { ':MarkdownPreview<cr>', 'Preview markdown' },
+                S = { ':MarkdownPreviewStop<cr>', 'Stop preview' },
+                T = { ':MarkdownPreviewToggle<cr>', 'Toggle preview' },
             },
         }, {
             prefix = '<leader>',

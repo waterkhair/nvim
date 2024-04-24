@@ -102,6 +102,8 @@ return {
             'typescript',
             'tsx',
             'query',
+            'markdown',
+            'markdown_inline',
         },
     },
 }

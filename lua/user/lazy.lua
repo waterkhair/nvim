@@ -21,7 +21,6 @@ require('lazy').setup({
     { import = 'plugins.lsp' },
     -- Interesting plugins to review
     --{ 'folke/neodev.nvim' }, -- Setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API
-    --{ 'stevearc/dressing.nvim' }, -- Override vim.ui.select and vim.ui.input with improvements upon the default behavior
     --{ 'glepnir/dashboard-nvim' }, -- Fancy and Blazing Fast start screen plugin of neovim
     --{ 'Exafunction/codeium.nvim' }, -- Native Codeium plugin for Neovim
     --{ 'mrjones2014/smart-splits.nvim' }, -- Supports seamless navigation between Neovim and terminal multiplexer split panes

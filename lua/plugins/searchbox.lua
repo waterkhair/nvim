@@ -1,7 +1,7 @@
 return {
     'VonHeikemen/searchbox.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
-    lazy = true,
+    lazy = false,
     config = function()
         local searchbox = require('searchbox')
         local which_key = require('which-key')
