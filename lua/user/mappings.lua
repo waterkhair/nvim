@@ -4,6 +4,11 @@ local which_key = require('which-key')
 
 -- Which key mappings
 which_key.register({
+    C = {
+        'Close',
+        e = { ':NvimTreeClose<cr>', 'File explorer' },
+        u = { ':UndotreeHide', 'UndotreeTogle' },
+    },
     E = {
         'Edit',
         a = { 'gg<Esc>VG', 'Select all' },
@@ -35,13 +40,6 @@ which_key.register({
         t = { ':FTermOpen<cr>', 'Terminal' },
         u = { ':UndotreeShow', 'UndotreeTogle' },
     },
-    Q = {
-        'Quit',
-        e = { ':NvimTreeClose<cr>', 'File explorer' },
-        q = { ':q<cr>', 'Close' },
-        Q = { ':q!<cr>', 'Close (Force)' },
-        u = { ':UndotreeHide', 'UndotreeTogle' },
-    },
     S = {
         'Settings',
         t = {
@@ -67,6 +65,9 @@ which_key.register({
         s = { ':tabs<cr>', 'List all tabs' },
         T = { '<c-w>T', 'Open buffer new tab' },
     },
+    wk = { ':WhichKey<cr>', 'Which Key' },
+    qq = { ':q<cr>', 'Close' },
+    qQ = { ':q!<cr>', 'Close (Force)' },
 }, {
     mode = 'n',
     prefix = '<leader>',

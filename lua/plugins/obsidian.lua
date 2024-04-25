@@ -12,7 +12,8 @@ return {
     -- },
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-        -- vim.opt.conceallevel = 1
+        -- vim.opt.conceallevel = 2
+        -- vim.g.vim_markdown_frontmatter = 1
 
         local obsidian = require('obsidian')
         local which_key = require('which-key')
@@ -20,15 +21,7 @@ return {
         obsidian.setup({
             workspaces = {
                 {
-                    name = 'waterkhair',
-                    path = '~/Documents/Obsidian/WaterKhair',
-                },
-                {
-                    name = 'local',
-                    path = '~/Documents/Obsidian/Local',
-                },
-                {
-                    name = "project",
+                    name = "current",
                     path = function()
                         -- alternatively use the CWD:
                         -- return assert(vim.fn.getcwd())
@@ -42,6 +35,10 @@ return {
                         },
                         disable_frontmatter = true,
                     },
+                },
+                {
+                    name = 'local',
+                    path = '~/Documents/Obsidian/Local',
                 },
             },
             notes_subdir = "Notes",
@@ -90,12 +87,15 @@ return {
         })
 
         which_key.register({
+            m = {
+                'Markdown',
+                c = { ':ObsidianToggleCheckbox<cr>', 'Toggle checkbox' },
+            },
             o = {
                 'Obsidian',
                 ['30'] = { ':ObsidianDailies -30 0<cr>', 'Last 30 days notes' },
                 ['7'] = { ':ObsidianDailies -7 0<cr>', 'Last 7 days notes' },
                 b = { ':ObsidianBackLinks<cr>', 'Back links' },
-                c = { ':ObsidianToggleCheckbox<cr>', 'Toggle checkbox' },
                 d = { ':ObsidianDailies <cr>', 'Dailies notes' },
                 f = { ':ObsidianFollowLink<cr>', 'Follow link' },
                 i = { ':FineCmdline<cr>ObsidianPasteImg ', 'Paste image from clipboard' },
@@ -107,7 +107,12 @@ return {
                 s = { ':FineCmdline<cr>ObsidianSearch ', 'Search' },
                 t = { ':ObsidianToday<cr>', 'Today\'s note' },
                 y = { ':ObsidianYesterday<cr>', 'Yesterday\'s note' },
-                w = { ':FineCmdline<cr>ObsidianWorkspace ', 'Switch workspace' },
+                w = {
+                    'Switch workspace',
+                    n = { ':ObsidianWorkspace current<cr>', 'Current' },
+                    l = { ':ObsidianWorkspace local<cr>', 'Local' },
+                    w = { ':ObsidianWorkspace waterkhair<cr>', 'WaterKhair' },
+                },
             },
         }, {
             mode = 'n',
