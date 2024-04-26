@@ -91,10 +91,6 @@ return {
         })
 
         which_key.register({
-            m = {
-                'Markdown',
-                c = { ':ObsidianToggleCheckbox<cr>', 'Toggle checkbox' },
-            },
             o = {
                 'Obsidian',
                 ['30'] = { ':ObsidianDailies -30 0<cr>', 'Last 30 days notes' },
@@ -132,6 +128,11 @@ return {
         }, {
             mode = 'v',
             prefix = '<leader>',
+        })
+        which_key.register({
+            ['<c-x>'] = { ':ObsidianToggleCheckbox<cr>', 'Toggle checkbox' },
+        }, {
+            mode = 'n',
         })
     end,
 }

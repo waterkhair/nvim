@@ -67,11 +67,17 @@ which_key.register({
         s = { ':tabs<cr>', 'List all tabs' },
         T = { '<c-w>T', 'Open buffer new tab' },
     },
+}, {
+    mode = 'n',
+    prefix = '<leader>',
+})
+which_key.register({
     wk = { ':WhichKey<cr>', 'Which Key' },
     qq = { ':q<cr>', 'Close' },
     qQ = { ':q!<cr>', 'Close (Force)' },
 }, {
     mode = 'n',
+    silent = true,
     prefix = '<leader>',
 })
 which_key.register({
