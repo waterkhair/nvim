@@ -8,6 +8,11 @@ return {
         vim.fn['mkdp#util#install']()
     end,
     config = function()
+        vim.g.mkdp_auto_close = 0
+        vim.g.mkdp_combine_preview = 1
+        vim.g.mkdp_refresh_slow = 1
+        vim.g.mkdp_theme = 'light'
+
         local which_key = require('which-key')
 
         which_key.register({

@@ -25,7 +25,9 @@ return {
                 },
                 d = {
                     'Delete note',
+                    g = { function() quicknote.DeleteNoteAtGlobal() end, 'Delete global note' },
                     l = { function() quicknote.DeleteNoteAtCurrentLine() end, 'Delete line note' },
+                    w = { function() quicknote.DeleteNoteAtCWD() end, 'Delete CWD note' },
                 },
                 l = {
                     'List notes',
@@ -50,9 +52,9 @@ return {
             f = {
                 n = {
                     'Find a Quicknote',
-                    b = { ':Telescope quicknote [scope=CurrentBuffer]<cr>', 'Find current buffer notes' },
-                    g = { ':Telescope quicknote [scope=Global]<cr>', 'Find global notes' },
-                    w = { ':Telescope quicknote [scope=CWD]<cr>', 'Find CWD notes' },
+                    b = { ':Telescope quicknote scope=CurrentBuffer<cr>', 'Find current buffer notes' },
+                    g = { ':Telescope quicknote scope=Global<cr>', 'Find global notes' },
+                    w = { ':Telescope quicknote scope=CWD<cr>', 'Find CWD notes' },
                 },
             },
         }, {
