@@ -7,16 +7,17 @@ which_key.register({
     C = {
         'Close',
         e = { ':NvimTreeClose<cr>', 'File explorer' },
-        u = { ':UndotreeHide', 'UndotreeTogle' },
+        h = { ':noh<cr>', 'Highlights' },
+        u = { ':UndotreeHide', 'Undotree' },
     },
     E = {
         'Edit',
-        a = { 'gg<Esc>VG', 'Select all' },
+        a = { 'ggVG', 'Select all' },
         i = { ':GuessIndent<cr>', 'Indent file' },
+        f = { ufo.closeAllFolds, 'Fold all' },
         p = { '"*p', 'Paste from clipbord' },
         y = { '"*y', 'Yank to clipbord' },
-        z = { ufo.openAllFolds, 'Unfold all' },
-        Z = { ufo.closeAllFolds, 'Fold all' },
+        u = { ufo.openAllFolds, 'Unfold all' },
     },
     F = {
         'File',
@@ -33,14 +34,14 @@ which_key.register({
         'Open',
         e = { ':NvimTreeOpen<cr>', 'File explorer' },
         g = { ':LazyGit<cr>', 'LazyGit' },
-        f = { function() oil.open_float() end, 'File' },
-        h = { ':noh<cr>', 'Highlights' },
+        f = { ':OilOpenFloat<cr>', 'File (Oil)' },
         l = { ':Lazy<cr>', 'Lazy' },
-        m = { ':ObsidianWorkspace current<cr>:ObsidianQuickSwitch<cr>', 'Markdown files' },
+        m = { ':ObsidianOpenMarkdownFiles<cr>', 'Markdown files' },
         M = { ':Mason<cr>', 'Mason' },
-        o = { ':ObsidianWorkspace local<cr>:ObsidianQuickSwitch<cr>', 'Obsidian files' },
+        o = { ':ObsidianOpenFiles<cr>', 'Obsidian files' },
         t = { ':FTermOpen<cr>', 'Terminal' },
-        u = { ':UndotreeShow', 'UndotreeTogle' },
+        u = { ':UndotreeShow', 'Undotree' },
+        w = { ':WhichKey<cr>', 'Which Key' },
     },
     S = {
         'Settings',
@@ -65,14 +66,13 @@ which_key.register({
         n = { ':tabnew<cr>', 'New tab' },
         o = { ':tabonly<cr>', 'Close all other tabs' },
         s = { ':tabs<cr>', 'List all tabs' },
-        T = { '<c-w>T', 'Open buffer new tab' },
+        T = { '<c-w>T', 'Open buffer in a new tab' },
     },
 }, {
     mode = 'n',
     prefix = '<leader>',
 })
 which_key.register({
-    wk = { ':WhichKey<cr>', 'Which Key' },
     qq = { ':q<cr>', 'Close' },
     qQ = { ':q!<cr>', 'Close (Force)' },
 }, {

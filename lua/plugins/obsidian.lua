@@ -134,5 +134,8 @@ return {
         }, {
             mode = 'n',
         })
+
+        vim.api.nvim_create_user_command('ObsidianOpenFiles', function() vim.cmd('ObsidianWorkspace current') vim.cmd('ObsidianQuickSwitch') end, {})
+        vim.api.nvim_create_user_command('ObsidianOpenMarkdownFiles', function() vim.cmd('ObsidianWorkspace local') vim.cmd('ObsidianQuickSwitch') end, {})
     end,
 }

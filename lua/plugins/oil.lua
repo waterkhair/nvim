@@ -27,5 +27,7 @@ return {
             -- },
             -- use_defauylt_keymaps = false,
         })
+
+        vim.api.nvim_create_user_command('OilOpenFloat', function() oil.open_float() end, {})
     end,
 }
