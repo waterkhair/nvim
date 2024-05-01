@@ -2,23 +2,29 @@ return {
     'skywind3000/vim-quickui',
     lazy = false,
     config = function()
-        vim.g.quickui_color_scheme = 'papercol dark'
+        vim.g.quickui_color_scheme = 'papercol light'
 
         local which_key = require('which-key')
 
         which_key.register({
-            ['<leader>'] = { '<cmd>call quickui#menu#open(\'normal\')<cr>', 'Menu' },
+            ['.'] = {
+                function()
+                    vim.call(
+                        'quickui#context#open',
+                        {
+                            { '&Yank to clipboard\tLeader+E+y', 'normal "*y' },
+                            { '&Paste from clipboard\tLeader+E+p', 'nroaml "*p' }
+                        },
+                        { index = 'g:quickui#context#cursor' }
+                    )
+                end,
+                'Context Menu'
+            },
+            ['<leader>'] = { function() vim.call('quickui#menu#open', 'normal') end, 'Menu' },
         }, {
             mode = 'n',
             prefix = '<leader>',
         })
-        which_key.register({
-            ['<leader>'] = { '<cmd>call quickui#menu#open(\'view\')<cr>', 'Menu' },
-        }, {
-            mode = 'v',
-            prefix = '<leader>',
-        })
-
         vim.call('quickui#menu#switch', 'normal')
         vim.call('quickui#menu#reset')
         vim.call('quickui#menu#install',
@@ -94,15 +100,23 @@ return {
             }
         )
 
-        vim.call('quickui#menu#switch', 'view')
-        vim.call('quickui#menu#reset')
-        vim.call('quickui#menu#install',
-            '&Edit',
-            {
-                { '&Yank to clipboard\tLeader+E+y', 'normal "*y' },
-                { '&Paste from clipboard\tLeader+E+p', 'normal "*p' },
-            }
-        )
+        which_key.register({
+            ['.'] = {
+                function()
+                    vim.call(
+                        'quickui#context#open',
+                        {
+                            { '&Yank to clipboard\tLeader+E+y', 'normal "*y' },
+                            { '&Paste from clipboard\tLeader+E+p', 'nroaml "*p' }
+                        },
+                        { index = 'g:quickui#context#cursor' }
+                    )
+                end,
+                'Context Menu'
+            },
+        }, {
+            mode = 'v',
+        })
     end,
 }
 
