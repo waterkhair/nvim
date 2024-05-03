@@ -1,7 +1,10 @@
 -- A blazing fast and easy to configure Neovim statusline
 return {
     'nvim-lualine/lualine.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = {
+        'nvim-tree/nvim-web-devicons',
+        'AndreM222/copilot-lualine',
+    },
     lazy = false,
     config = function()
         require('lualine').setup({
@@ -22,7 +25,7 @@ return {
                         sections = { 'error', 'warn', 'info', 'hint' },
                     },
                 },
-                lualine_x = { 'filetype' },
+                lualine_x = { 'copilot', 'filetype' },
                 lualine_y = { 'encoding', 'fileformat' },
                 lualine_z = { 'mode' },
             },

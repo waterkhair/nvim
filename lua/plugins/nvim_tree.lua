@@ -15,6 +15,8 @@ return {
 
             api.config.mappings.default_on_attach(bufnr)
             vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+            vim.keymap.set('n', '[r', '<cmd>:NvimTreeResize -5<cr>', opts('Decrease file explorer width'))
+            vim.keymap.set('n', ']r', '<cmd>:NvimTreeResize +5<cr>', opts('Increase file explorer width'))
         end,
         hijack_cursor = true,
         hijack_unnamed_buffer_when_opening = true,
