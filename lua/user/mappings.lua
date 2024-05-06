@@ -13,7 +13,6 @@ which_key.register({
     E = {
         'Edit',
         a = { 'ggVG', 'Select all' },
-        i = { ':GuessIndent<cr>', 'Indent file' },
         f = { ufo.closeAllFolds, 'Fold all' },
         p = { '"*p', 'Paste from clipbord' },
         y = { '"*y', 'Yank to clipbord' },
