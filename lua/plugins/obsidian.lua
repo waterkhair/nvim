@@ -98,13 +98,13 @@ return {
                 b = { ':ObsidianBackLinks<cr>', 'Back links' },
                 d = { ':ObsidianDailies <cr>', 'Dailies notes' },
                 f = { ':ObsidianFollowLink<cr>', 'Follow link' },
-                i = { ':FineCmdline<cr>ObsidianPasteImg ', 'Paste image from clipboard' },
+                i = { ':ObsidianPasteImg ', 'Paste image from clipboard' },
                 l = { ':ObsidianLinks<cr>', 'Show links' },
-                n = { ':FineCmdline<cr>ObsidianNew ', 'New' },
-                o = { ':FineCmdline<cr>ObsidianOpen ', 'Open in app' },
+                n = { ':ObsidianNew ', 'New' },
+                o = { ':ObsidianOpen ', 'Open in app' },
                 r = { ':ObsidianTomorrow<cr>', 'Tomorrow\'s note' },
                 q = { ':ObsidianQuickSwitch<cr>', 'Quick switch' },
-                s = { ':FineCmdline<cr>ObsidianSearch ', 'Search' },
+                s = { ':ObsidianSearch ', 'Search' },
                 t = { ':ObsidianToday<cr>', 'Today\'s note' },
                 y = { ':ObsidianYesterday<cr>', 'Yesterday\'s note' },
                 w = {
@@ -121,9 +121,9 @@ return {
         which_key.register({
             o = {
                 'Obsidian',
-                e = { '<cmd>FineCmdline<cr>ObsidianExtractNote ', 'Extract selected text to new note' },
+                e = { ':ObsidianExtractNote ', 'Extract selected text to new note' },
                 l = { ':ObsidianLink<cr>', 'Link selected text' },
-                n = { '<cmd>FineCmdline<cr>ObsidianLinkNew ', 'Link selected text to new note' },
+                n = { ':ObsidianLinkNew ', 'Link selected text to new note' },
             },
         }, {
             mode = 'v',
@@ -135,7 +135,7 @@ return {
             mode = 'n',
         })
 
-        vim.api.nvim_create_user_command('ObsidianOpenFiles', function() vim.cmd('ObsidianWorkspace current') vim.cmd('ObsidianQuickSwitch') end, {})
-        vim.api.nvim_create_user_command('ObsidianOpenMarkdownFiles', function() vim.cmd('ObsidianWorkspace local') vim.cmd('ObsidianQuickSwitch') end, {})
+        vim.api.nvim_create_user_command('ObsidianOpenFiles', function() vim.cmd('ObsidianWorkspace local') vim.cmd('ObsidianQuickSwitch') end, {})
+        vim.api.nvim_create_user_command('ObsidianOpenMarkdownFiles', function() vim.cmd('ObsidianWorkspace current') vim.cmd('ObsidianQuickSwitch') end, {})
     end,
 }

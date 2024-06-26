@@ -52,7 +52,7 @@ return {
                     ['4'] = {':EasyTablesCreateNew 4<cr>', 'Create table 4x4' },
                     ['5'] = {':EasyTablesCreateNew 5<cr>', 'Create table 5x5' },
                     ['6'] = {':EasyTablesCreateNew 6<cr>', 'Create table 6x6' },
-                    t = {'<cmd>FineCmdline<cr>EasyTablesCreateNew ', 'Create table' },
+                    t = {':EasyTablesCreateNew ', 'Create table' },
                 },
             },
         }, {
