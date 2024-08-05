@@ -107,10 +107,12 @@ return {
             { '<leader>os', ':ObsidianSearch ', desc = 'Search' },
             { '<leader>ot', ':ObsidianToday<cr>', desc = 'Today\'s note' },
             { '<leader>oy', ':ObsidianYesterday<cr>', desc = 'Yesterday\'s note' },
-            { '<leader>ow', desc = 'Switch workspace' },
-            { '<leader>own', ':ObsidianWorkspace current<cr>', desc = 'Current' },
-            { '<leader>owl', ':ObsidianWorkspace local<cr>', desc = 'Local' },
-            { '<leader>oww', ':ObsidianWorkspace waterkhair<cr>', desc = 'WaterKhair' },
+            {
+                { '<leader>ow', desc = 'Switch workspace' },
+                { '<leader>own', ':ObsidianWorkspace current<cr>', desc = 'Current' },
+                { '<leader>owl', ':ObsidianWorkspace local<cr>', desc = 'Local' },
+                { '<leader>oww', ':ObsidianWorkspace waterkhair<cr>', desc = 'WaterKhair' },
+            },
         })
         which_key.add({
             mode = 'v',

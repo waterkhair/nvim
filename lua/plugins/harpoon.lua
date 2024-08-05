@@ -35,7 +35,7 @@ return {
 
         -- Which key mappings
         which_key.add({
-            { '<leader>h', desc = 'Harpoon', group = 'Open' },
+            { '<leader>h', desc = 'Harpoon' },
             { '<leader>h1', function() harpoon:list():select(1) end, desc = 'Go to file 1' },
             { '<leader>h3', function() harpoon:list():select(2) end, desc = 'Go to file 3' },
             { '<leader>h2', function() harpoon:list():select(3) end, desc = 'Go to file 2' },

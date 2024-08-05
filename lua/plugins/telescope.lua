@@ -24,23 +24,23 @@ return {
                     },
                 },
             },
-            extensions = {
-                quicknote = {
-                    defaultScope = 'CurrentBuffer',
-                },
-            },
+            -- extensions = {
+            --     quicknote = {
+            --         defaultScope = 'CurrentBuffer',
+            --     },
+            -- },
         })
 
         telescope.load_extension('fzf')
         telescope.load_extension('lazygit')
-        telescope.load_extension('quicknote')
+        -- telescope.load_extension('quicknote')
 
         which_key.add({
             { '<leader>f', desc = 'Find' },
             { '<leader>fQ', builtin.quickfixhistory, desc = 'Find quickfix history' },
             { '<leader>fb', builtin.buffers, desc = 'Find buffers' },
             { '<leader>fc', builtin.grep_string, desc = 'Find string under cursor in cwd' },
-            { '<leader>ff', builtin.grep_string, desc = 'Find files' },
+            { '<leader>ff', builtin.find_files, desc = 'Find files' },
             { '<leader>fg', builtin.git_files, desc = 'Find git files' },
             { '<leader>fh', builtin.search_history, desc = 'Search history' },
             { '<leader>fl', builtin.highlights, desc = 'Find highlights' },
@@ -50,6 +50,12 @@ return {
             { '<leader>fs', builtin.live_grep, desc = 'Find string in cwd' },
             { '<leader>fw', builtin.spell_suggest, desc = 'Find word suggestion' },
             { '<leader>fx', builtin.current_buffer_fuzzy_find, desc = 'Find current buffer fuzzy find' },
+            -- {
+            --     { '<leader>fn', desc = 'Find a Quicknote' },
+            --     { '<leader>fnb', ':Telescope quicknote scope=CurrentBuffer<cr>', desc = 'Find current buffer notes' },
+            --     { '<leader>fng', ':Telescope quicknote scope=Global<cr>', desc = 'Find global notes' },
+            --     { '<leader>fnw', ':Telescope quicknote scope=CWD<cr>', desc = 'Find CWD notes' },
+            -- },
         })
     end,
 }

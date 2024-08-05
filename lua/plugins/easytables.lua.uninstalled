@@ -1,3 +1,4 @@
+-- uninstalled
 return {
     'Myzel394/easytables.nvim',
     lazy = false,
@@ -40,14 +41,16 @@ return {
         which_key.add({
             { '<leader>m', desc = 'Markdown' },
             { '<leader>me', ':EasyTablesImportThisTable<cr>', desc = 'Edit Table' },
-            { '<leader>mn', desc = 'New table' },
-            { '<leader>mn1', ':EasyTablesCreateNew 1<cr>', desc = 'Create table 1x1' },
-            { '<leader>mn2', ':EasyTablesCreateNew 2<cr>', desc = 'Create table 2x2' },
-            { '<leader>mn3', ':EasyTablesCreateNew 3<cr>', desc = 'Create table 3x3' },
-            { '<leader>mn4', ':EasyTablesCreateNew 4<cr>', desc = 'Create table 4x4' },
-            { '<leader>mn5', ':EasyTablesCreateNew 5<cr>', desc = 'Create table 5x5' },
-            { '<leader>mn6', ':EasyTablesCreateNew 6<cr>', desc = 'Create table 6x6' },
-            { '<leader>mnt', ':EasyTablesCreateNew ', desc = 'Create table' },
+            {
+                { '<leader>mn', desc = 'New table' },
+                { '<leader>mn1', ':EasyTablesCreateNew 1<cr>', desc = 'Create table 1x1' },
+                { '<leader>mn2', ':EasyTablesCreateNew 2<cr>', desc = 'Create table 2x2' },
+                { '<leader>mn3', ':EasyTablesCreateNew 3<cr>', desc = 'Create table 3x3' },
+                { '<leader>mn4', ':EasyTablesCreateNew 4<cr>', desc = 'Create table 4x4' },
+                { '<leader>mn5', ':EasyTablesCreateNew 5<cr>', desc = 'Create table 5x5' },
+                { '<leader>mn6', ':EasyTablesCreateNew 6<cr>', desc = 'Create table 6x6' },
+                { '<leader>mnt', ':EasyTablesCreateNew ', desc = 'Create table' },
+            },
         })
     end,
 }
