@@ -10,15 +10,13 @@ return {
         vim.api.nvim_create_user_command('FTermExit', require('FTerm').exit, { bang = true })
         vim.api.nvim_create_user_command('FTermToggle', require('FTerm').toggle, { bang = true })
 
-        which_key.register({
-            ['<c-\\>'] = { ':FTermToggle<cr>', 'Toggle terminal' },
-        }, {
+        which_key.add({
             mode = 'n',
+            { '<c-\\>', ':FTermToggle<cr>', desc = 'Toggle terminal' },
         })
-        which_key.register({
-            ['<c-\\>'] = { '<c-\\><c-n>:FTermToggle<cr>', 'Toggle terminal' },
-        }, {
+        which_key.add({
             mode = 't',
+            { '<c-\\>', '<c-\\><c-n>:FTermToggle<cr>', desc = 'Toggle terminal' },
         })
     end,
 }

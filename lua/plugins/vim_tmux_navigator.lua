@@ -5,13 +5,12 @@ return {
     config = function()
         local which_key = require('which-key')
 
-        which_key.register({
-            ['<c-h>'] = { ':TmuxNavigateLeft<cr>', 'Move to left tmux pane' },
-            ['<c-j>'] = { ':TmuxNavigateDown<cr>', 'Move to bottom tmux pane' },
-            ['<c-k>'] = { ':TmuxNavigateUp<cr>', 'Move to top tmux pane' },
-            ['<c-l>'] = { ':TmuxNavigateRight<cr>', 'Move to right tmux pane' },
-        }, {
+        which_key.add({
             mode = 'n',
+            { '<c-h>', ':TmuxNavigateLeft<cr>', desc = 'Move to left tmux pane' },
+            { '<c-j>', ':TmuxNavigateDown<cr>', desc = 'Move to bottom tmux pane' },
+            { '<c-k>', ':TmuxNavigateUp<cr>', desc = 'Move to top tmux pane' },
+            { '<c-l>', ':TmuxNavigateRight<cr>', desc = 'Move to right tmux pane' },
         })
     end
 }

@@ -15,15 +15,11 @@ return {
 
         local which_key = require('which-key')
 
-        which_key.register({
-            m = {
-                'Markdown',
-                P = { ':MarkdownPreview<cr>', 'Preview markdown' },
-                S = { ':MarkdownPreviewStop<cr>', 'Stop preview' },
-                T = { ':MarkdownPreviewToggle<cr>', 'Toggle preview' },
-            },
-        }, {
-            prefix = '<leader>',
+        which_key.add({
+            { '<leader>m', desc = 'Markdown' },
+            { '<leader>mP', ':MarkdownPreview<cr>', desc = 'Preview markdown' },
+            { '<leader>mS', ':MarkdownPreviewStop<cr>', desc = 'Stop preview' },
+            { '<leader>mT', ':MarkdownPreviewToggle<cr>', desc = 'Toggle preview' },
         })
     end,
 }

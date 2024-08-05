@@ -35,25 +35,21 @@ return {
         telescope.load_extension('lazygit')
         telescope.load_extension('quicknote')
 
-        which_key.register({
-            f = {
-                'Find',
-                f = { builtin.find_files, 'Find files' },
-                c = { builtin.grep_string, 'Find string under cursor in cwd' },
-                s = { builtin.live_grep, 'Find string in cwd' },
-                g = { builtin.git_files, 'Find git files' },
-                b = { builtin.buffers, 'Find buffers' },
-                q = { builtin.quickfix, 'Find quickfix' },
-                Q = { builtin.quickfixhistory, 'Find quickfix history' },
-                r = { builtin.oldfiles, 'Find recent opened files' },
-                h = { builtin.search_history, 'Search history' },
-                m = { builtin.marks, 'Find marks' },
-                w = { builtin.spell_suggest, 'Find word suggestion' },
-                l = { builtin.highlights, 'Find highlights' },
-                x = { builtin.current_buffer_fuzzy_find, 'Find current buffer fuzzy find' },
-            },
-        }, {
-            prefix = '<leader>',
+        which_key.add({
+            { '<leader>f', desc = 'Find' },
+            { '<leader>fQ', builtin.quickfixhistory, desc = 'Find quickfix history' },
+            { '<leader>fb', builtin.buffers, desc = 'Find buffers' },
+            { '<leader>fc', builtin.grep_string, desc = 'Find string under cursor in cwd' },
+            { '<leader>ff', builtin.grep_string, desc = 'Find files' },
+            { '<leader>fg', builtin.git_files, desc = 'Find git files' },
+            { '<leader>fh', builtin.search_history, desc = 'Search history' },
+            { '<leader>fl', builtin.highlights, desc = 'Find highlights' },
+            { '<leader>fm', builtin.marks, desc = 'Find marks' },
+            { '<leader>fq', builtin.quickfix, desc = 'Find quickfix' },
+            { '<leader>fr', builtin.oldfiles, desc = 'Find recent opened files' },
+            { '<leader>fs', builtin.live_grep, desc = 'Find string in cwd' },
+            { '<leader>fw', builtin.spell_suggest, desc = 'Find word suggestion' },
+            { '<leader>fx', builtin.current_buffer_fuzzy_find, desc = 'Find current buffer fuzzy find' },
         })
     end,
 }

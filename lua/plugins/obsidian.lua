@@ -90,49 +90,38 @@ return {
             },
         })
 
-        which_key.register({
-            o = {
-                'Obsidian',
-                ['30'] = { ':ObsidianDailies -30 0<cr>', 'Last 30 days notes' },
-                ['7'] = { ':ObsidianDailies -7 0<cr>', 'Last 7 days notes' },
-                b = { ':ObsidianBackLinks<cr>', 'Back links' },
-                d = { ':ObsidianDailies <cr>', 'Dailies notes' },
-                f = { ':ObsidianFollowLink<cr>', 'Follow link' },
-                i = { ':ObsidianPasteImg ', 'Paste image from clipboard' },
-                l = { ':ObsidianLinks<cr>', 'Show links' },
-                n = { ':ObsidianNew ', 'New' },
-                o = { ':ObsidianOpen ', 'Open in app' },
-                r = { ':ObsidianTomorrow<cr>', 'Tomorrow\'s note' },
-                q = { ':ObsidianQuickSwitch<cr>', 'Quick switch' },
-                s = { ':ObsidianSearch ', 'Search' },
-                t = { ':ObsidianToday<cr>', 'Today\'s note' },
-                y = { ':ObsidianYesterday<cr>', 'Yesterday\'s note' },
-                w = {
-                    'Switch workspace',
-                    n = { ':ObsidianWorkspace current<cr>', 'Current' },
-                    l = { ':ObsidianWorkspace local<cr>', 'Local' },
-                    w = { ':ObsidianWorkspace waterkhair<cr>', 'WaterKhair' },
-                },
-            },
-        }, {
+        which_key.add({
             mode = 'n',
-            prefix = '<leader>',
+            { '<leader>o', desc = 'Obsidian' },
+            { '<leader>o30', ':ObsidianDailies -30 0<cr>', desc = 'Last 30 days notes' },
+            { '<leader>o7', ':ObsidianDailies -7 0<cr>', desc = 'Last 7 days notes' },
+            { '<leader>ob', ':ObsidianBackLinks<cr>', desc = 'Back links' },
+            { '<leader>od', ':ObsidianDailies <cr>', desc = 'Dailies notes' },
+            { '<leader>of', ':ObsidianFollowLink<cr>', desc = 'Follow link' },
+            { '<leader>oi', ':ObsidianPasteImg ', desc = 'Paste image from clipboard' },
+            { '<leader>ol', ':ObsidianLinks<cr>', desc = 'Show links' },
+            { '<leader>on', ':ObsidianNew ', desc = 'New' },
+            { '<leader>oo', ':ObsidianOpen ', desc = 'Open in app' },
+            { '<leader>or', ':ObsidianTomorrow<cr>', desc = 'Tomorrow\'s note' },
+            { '<leader>oq', ':ObsidianQuickSwitch<cr>', desc = 'Quick switch' },
+            { '<leader>os', ':ObsidianSearch ', desc = 'Search' },
+            { '<leader>ot', ':ObsidianToday<cr>', desc = 'Today\'s note' },
+            { '<leader>oy', ':ObsidianYesterday<cr>', desc = 'Yesterday\'s note' },
+            { '<leader>ow', desc = 'Switch workspace' },
+            { '<leader>own', ':ObsidianWorkspace current<cr>', desc = 'Current' },
+            { '<leader>owl', ':ObsidianWorkspace local<cr>', desc = 'Local' },
+            { '<leader>oww', ':ObsidianWorkspace waterkhair<cr>', desc = 'WaterKhair' },
         })
-        which_key.register({
-            o = {
-                'Obsidian',
-                e = { ':ObsidianExtractNote ', 'Extract selected text to new note' },
-                l = { ':ObsidianLink<cr>', 'Link selected text' },
-                n = { ':ObsidianLinkNew ', 'Link selected text to new note' },
-            },
-        }, {
+        which_key.add({
             mode = 'v',
-            prefix = '<leader>',
+            { '<leader>o', desc = 'Obsidian' },
+            { '<leader>oe', ':ObsidianExtractNote ', desc = 'Extract selected text to new note' },
+            { '<leader>ol', ':ObsidianLink<cr>', desc = 'Link selected text' },
+            { '<leader>on', ':ObsidianLinkNew ', desc = 'Link selected text to new note' },
         })
-        which_key.register({
-            ['<c-x>'] = { ':ObsidianToggleCheckbox<cr>', 'Toggle checkbox' },
-        }, {
+        which_key.add({
             mode = 'n',
+            { '<c-x>', ':ObsidianToggleCheckbox<cr>', desc = 'Toggle checkbox' },
         })
 
         vim.api.nvim_create_user_command('ObsidianOpenFiles', function() vim.cmd('ObsidianWorkspace local') vim.cmd('ObsidianQuickSwitch') end, {})

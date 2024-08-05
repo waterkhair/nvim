@@ -49,37 +49,27 @@ return {
             },
         })
 
-        which_key.register({
-            b = {
-                'Buffers',
-                a = { ':bufdo :Bdelete<cr>', 'Close all buffers' },
-                c = { ':Bdelete<cr>', 'Close current buffer' },
-                C = { ':Bdelete!<cr>', 'Force close current buffer' },
-                e = { ':enew<cr>', 'Edit new buffer' },
-                l = { ':BufferLineCloseLeft<cr>', 'Close all buffers to the left' },
-                n = { ':bn<cr>', 'Next buffer' },
-                o = { ':BufferLineCloseOthers<cr>', 'Close all other buffers' },
-                p = { ':bp<cr>', 'Previous buffer' },
-                r = { ':BufferLineCloseRight<cr>', 'Close all buffers to the right' },
-                s = {
-                    'Sort buffers',
-                    d = { ':BufferLineSortByDirectory<cr>', 'Sort buffers by extension' },
-                    e = { ':BufferLineSortByExtension<cr>', 'Sort buffers by extension' },
-                },
-            },
-        }, {
+        which_key.add({
             mode = 'n',
-            prefix = '<leader>',
-        })
-        which_key.register({
-            ['<Tab>'] = { ':BufferLineCycleNext<cr>', 'Next buffer' },
-            ['<S-Tab>'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },
-            ['[b'] = { ':BufferLineCyclePrev<cr>', 'Previous buffer' },
-            ['[B'] = { ':BufferLineMovePrev<cr>', 'Move buffer to the left' },
-            [']b'] = { ':BufferLineCycleNext<cr>', 'Next buffer' },
-            [']B'] = { ':BufferLineMoveNext<cr>', 'Move buffer to the right' },
-        }, {
-            mode = 'n',
+            { '<leader>b', desc = 'Buffers' },
+            { '<leader>ba', ':bufdo :Bdelete<cr>', desc = 'Close all buffers' },
+            { '<leader>bc', ':Bdelete<cr>', desc = 'Close current buffer' },
+            { '<leader>bC', ':Bdelete!<cr>', desc = 'Force close current buffer' },
+            { '<leader>be', ':enew<cr>', desc = 'Edit new buffer' },
+            { '<leader>bl', ':BufferLineCloseLeft<cr>', desc = 'Close all buffers to the left' },
+            { '<leader>bn', ':bn<cr>', desc = 'Next buffer' },
+            { '<leader>bo', ':BufferLineCloseOthers<cr>', desc = 'Close all other buffers' },
+            { '<leader>bp', ':bp<cr>', desc = 'Previous buffer' },
+            { '<leader>br', ':BufferLineCloseRight<cr>', desc = 'Close all buffers to the right' },
+            { '<leader>bs', desc = 'Sort buffers' },
+            { '<leader>bsd', ':BufferLineSortByDirectory<cr>', desc = 'Sort buffers by directory' },
+            { '<leader>bse', ':BufferLineSortByExtension<cr>', desc = 'Sort buffers by extension' },
+            { '<Tab>', ':BufferLineCycleNext<cr>', desc = 'Next buffer' },
+            { '<S-Tab>', ':BufferLineCyclePrev<cr>', desc = 'Previous buffer' },
+            { '[b', ':BufferLineCyclePrev<cr>', desc = 'Previous buffer' },
+            { '[B', ':BufferLineMovePrev<cr>', desc = 'Move buffer to the left' },
+            { ']b', ':BufferLineCycleNext<cr>', desc = 'Next buffer' },
+            { ']B', ':BufferLineMoveNext<cr>', desc = 'Move buffer to the right' },
         })
     end,
 }

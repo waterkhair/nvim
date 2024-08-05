@@ -14,59 +14,35 @@ return {
         })
 
         -- Which key mappings
-        which_key.register({
-            n = {
-                'Notes',
-                c = {
-                    'Create note',
-                    l = { function() quicknote.NewNoteAtCurrentLine()  quicknote.OpenNoteAtCurrentLine() end, 'New line note' },
-                    g = { function() quicknote.NewNoteAtGlobal() end, 'New global note' },
-                    w = { function() quicknote.NewNoteAtCWD() end, 'New CWD note' },
-                },
-                d = {
-                    'Delete note',
-                    g = { function() quicknote.DeleteNoteAtGlobal() end, 'Delete global note' },
-                    l = { function() quicknote.DeleteNoteAtCurrentLine() end, 'Delete line note' },
-                    w = { function() quicknote.DeleteNoteAtCWD() end, 'Delete CWD note' },
-                },
-                l = {
-                    'List notes',
-                    b = { function() quicknote.ListNotesForCurrentBuffer() end, 'List current buffer notes' },
-                    g = { function() quicknote.ListNotesForGlobal() end, 'List global notes' },
-                    w = { function() quicknote.ListNotesForCWD() end, 'List CWD notes' },
-                },
-                o = {
-                    'Open note',
-                    l = { function() quicknote.OpenNoteAtCurrentLine() end, 'Open line note' },
-                    g = { function() quicknote.OpenNoteAtGlobal() end, 'Open global note' },
-                    w = { function() quicknote.OpenNoteAtCWD() end, 'Open CWD note' },
-                },
-                q = { ':Bdelete<cr>::wq<cr>', 'Close note' },
-                s = {
-                    'Signs',
-                    h = { function() quicknote.HideNoteSigns() end, 'Hide note signs' },
-                    s = { function() quicknote.ShowNoteSigns() end, 'Show note signs' },
-                    t = { function() quicknote.ToggleNoteSigns() end, 'Toggle note signs' },
-                },
-            },
-            f = {
-                n = {
-                    'Find a Quicknote',
-                    b = { ':Telescope quicknote scope=CurrentBuffer<cr>', 'Find current buffer notes' },
-                    g = { ':Telescope quicknote scope=Global<cr>', 'Find global notes' },
-                    w = { ':Telescope quicknote scope=CWD<cr>', 'Find CWD notes' },
-                },
-            },
-        }, {
-            prefix = '<leader>',
-        })
-        which_key.register({
-            ['['] = {
-                n = { function() quicknote.JumpToNextNote() end, 'Next note' },
-            },
-            [']'] = {
-                n = { function() quicknote.JumpToPreviousNote() end, 'Previous note' },
-            },
+        which_key.add({
+            { '<leader>fn', desc = 'Find a Quicknote' },
+            { '<leader>fnb', ':Telescope quicknote scope=CurrentBuffer<cr>', desc = 'Find current buffer notes' },
+            { '<leader>fng', ':Telescope quicknote scope=Global<cr>', desc = 'Find global notes' },
+            { '<leader>fnw', ':Telescope quicknote scope=CWD<cr>', desc = 'Find CWD notes' },
+            { '<leader>n', desc = 'Notes' },
+            { '<leader>nc', desc = 'Create note' },
+            { '<leader>ncg', function() quicknote.NewNoteAtGlobal() end, desc = 'New global note' },
+            { '<leader>ncl', function() quicknote.NewNoteAtCurrentLine() quicknote.OpenNoteAtCurrentLine() end, desc = 'New line note' },
+            { '<leader>ncw', function() quicknote.NewNoteAtCWD() end, desc = 'New CWD note' },
+            { '<leader>nd', desc = 'Delete note' },
+            { '<leader>ndg', function() quicknote.DeleteNoteAtGlobal() end, desc = 'Delete global note' },
+            { '<leader>ndl', function() quicknote.DeleteNoteAtCurrentLine() end, desc = 'Delete line note' },
+            { '<leader>ndw', function() quicknote.DeleteNoteAtCWD() end, desc = 'Delete CWD note' },
+            { '<leader>nl', desc = 'List notes' },
+            { '<leader>nlb', function() quicknote.ListNotesForCurrentBuffer() end, desc = 'List current buffer notes' },
+            { '<leader>nlg', function() quicknote.ListNotesForGlobal() end, desc = 'List global notes' },
+            { '<leader>nlw', function() quicknote.ListNotesForCWD() end, desc = 'List CWD notes' },
+            { '<leader>no', desc = 'Open note' },
+            { '<leader>nog', function() quicknote.OpenNoteAtGlobal() end, desc = 'Open global note' },
+            { '<leader>nol', function() quicknote.OpenNoteAtCurrentLine() end, desc = 'Open line note' },
+            { '<leader>now', function() quicknote.OpenNoteAtCWD() end, desc = 'Open CWD note' },
+            { '<leader>nq', ':Bdelete<cr>::wq<cr>', desc = 'Close note' },
+            { '<leader>ns', desc = 'Signs' },
+            { '<leader>nsh', function() quicknote.HideNoteSigns() end, desc = 'Hide note signs' },
+            { '<leader>nss', function() quicknote.ShowNoteSigns() end, desc = 'Show note signs' },
+            { '<leader>nst', function() quicknote.ToggleNoteSigns() end, desc = 'Toggle note signs' },
+            { '[n', function() quicknote.JumpToNextNote() end, desc = 'Next note' },
+            { ']n', function() quicknote.JumpToPreviousNote() end, desc = 'Previous note' },
         })
     end,
 }

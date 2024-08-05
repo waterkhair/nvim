@@ -6,8 +6,11 @@ return {
 
         local which_key = require('which-key')
 
-        which_key.register({
-            ['.'] = {
+        which_key.add({
+            mode = 'n',
+            { '<leader><leader>', function() vim.call('quickui#menu#open', 'normal') end, desc = 'Menu' },
+            {
+                '<leader>.',
                 function()
                     vim.call(
                         'quickui#context#open',
@@ -18,12 +21,8 @@ return {
                         { index = 'g:quickui#context#cursor' }
                     )
                 end,
-                'Context Menu'
+                desc = 'Context Menu',
             },
-            ['<leader>'] = { function() vim.call('quickui#menu#open', 'normal') end, 'Menu' },
-        }, {
-            mode = 'n',
-            prefix = '<leader>',
         })
         vim.call('quickui#menu#switch', 'normal')
         vim.call('quickui#menu#reset')
@@ -100,8 +99,10 @@ return {
             }
         )
 
-        which_key.register({
-            ['.'] = {
+        which_key.add({
+            mode = 'v',
+            {
+                '.',
                 function()
                     vim.call(
                         'quickui#context#open',
@@ -112,10 +113,8 @@ return {
                         { index = 'g:quickui#context#cursor' }
                     )
                 end,
-                'Context Menu'
+                desc = 'Context Menu',
             },
-        }, {
-            mode = 'v',
         })
     end,
 }

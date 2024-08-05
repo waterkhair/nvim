@@ -4,24 +4,18 @@ return {
     config = function()
         local which_key = require('which-key')
 
-        which_key.register({
-            m = {
-                'Markdown',
-                h = { ':HeaderDecrease<cr>', 'Decrease all headers' },
-                H = { ':HeaderIncrease<cr>', 'Increase all headers' },
-                s = { ':SetexToAtx<cr>', 'Setex to Atx headers' },
-                t = {
-                    'Table of contents',
-                    h = { ':Toch<cr>', 'Generate table of contents (horizontal)' },
-                    i = { ':InsertToc<cr>', 'Insert table of contents at current line' },
-                    I = { ':InsertNToc<cr>', 'Insert table of contents at current line (h2)' },
-                    t = { ':Toc<cr>', 'Generate table of contents' },
-                    v = { ':Tocv<cr>', 'Generate table of contents (vertical)' },
-                },
-            },
-        }, {
+        which_key.add({
             mode = 'n',
-            prefix = '<leader>',
+            { '<leader>m', desc = 'Markdown' },
+            { '<leader>mH', ':HeaderIncrease<cr>', desc = 'Increase all headers' },
+            { '<leader>mh', ':HeaderDecrease<cr>', desc = 'Decrease all headers' },
+            { '<leader>ms', ':SetexToAtx<cr>', desc = 'Setex to Atx headers' },
+            { '<leader>mt', desc = 'Table of contents' },
+            { '<leader>mtI', ':InsertNToc<cr>', desc = 'Insert table of contents at current line (h2)' },
+            { '<leader>mth', ':Toch<cr>', desc = 'Generate table of contents (horizontal)' },
+            { '<leader>mti', ':InsertToc<cr>', desc = 'Insert table of contents at current line' },
+            { '<leader>mtt', ':Toc<cr>', desc = 'Generate table of contents' },
+            { '<leader>mtv', ':Tocv<cr>', desc = 'Generate table of contents (vertical)' },
         })
     end,
 }

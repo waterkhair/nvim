@@ -7,29 +7,24 @@ return {
 
         local which_key = require('which-key')
 
-        which_key.register({
-            c = {
-                'Copilot',
-                d = { ':Copilot disable<cr>', 'Disable Copilot' },
-                e = { ':Copilot enable<cr>', 'Enable Copilot' },
-                f = { ':Copilot feedback<cr>', 'Send feedback to Copilot' },
-                o = { ':Copilot signout<cr>', 'Sign out of Copilot' },
-                p = { ':Copilot panel<cr>', 'Open Copilot panel' },
-                s = { ':Copilot setup<cr>', 'Setup Copilot' },
-                v = { ':Copilot version<cr>', 'Show Copilot version' },
-            },
-        }, {
-            prefix = '<leader>',
+        which_key.add({
+            { '<leader>c', desc = 'Copilot' },
+            { '<leader>cd', ':Copilot disable<cr>', desc = 'Disable Copilot' },
+            { '<leader>ce', ':Copilot enable<cr>', desc = 'Enable Copilot' },
+            { '<leader>cf', ':Copilot feedback<cr>', desc = 'Send feedback to Copilot' },
+            { '<leader>co', ':Copilot signout<cr>', desc = 'Sign out of Copilot' },
+            { '<leader>cp', ':Copilot panel<cr>', desc = 'Open Copilot panel' },
+            { '<leader>cs', ':Copilot setup<cr>', desc = 'Setup Copilot' },
+            { '<leader>cv', ':Copilot version<cr>', desc = 'Show Copilot version' },
         })
-        which_key.register({
-            ['<c-d>'] = { '<Plug>(copilot-dismiss)', 'Dismiss suggestion' },
-            ['<c-j>'] = { '<Plug>(copilot-next)', 'Next suggestion' },
-            ['<c-k>'] = { '<Plug>(copilot-previous)', 'Previous suggestion' },
-            ['<c-l>'] = { '<Plug>(copilot-accept-line)', 'Accept next line suggestion' },
-            ['<c-y>'] = { function() vim.api.nvim_feedkeys(vim.fn['copilot#Accept'](), 'i', true) end, 'Accept next word suggestion' },
-            ['<c-w>'] = { '<Plug>(copilot-accept-word)', 'Accept next word suggestion' },
-        }, {
+        which_key.add({
             mode = 'i',
+            { '<c-d>', '<Plug>(copilot-dismiss)', desc = 'Dismiss suggestion' },
+            { '<c-j>', '<Plug>(copilot-next)', desc = 'Next suggestion' },
+            { '<c-k>', '<Plug>(copilot-previous)', desc = 'Previous suggestion' },
+            { '<c-l>', '<Plug>(copilot-accept-line)', desc = 'Accept next line suggestion' },
+            { '<c-y>', function() vim.api.nvim_feedkeys(vim.fn['copilot#Accept'](), 'i', true) end, desc = 'Accept next word suggestion' },
+            { '<c-w>', '<Plug>(copilot-accept-word)', desc = 'Accept next word suggestion' },
         })
     end,
 }

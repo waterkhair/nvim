@@ -34,22 +34,18 @@ return {
         harpoon.setup()
 
         -- Which key mappings
-        which_key.register({
-            h = {
-                'Harpoon',
-                a = { function() harpoon:list():add() end, 'Add file' },
-                d = { function() harpoon:list():remove() end, 'Remove file' },
-                e = { function() toggle_telescope(harpoon:list()) end, 'Toggle quick menu' },
-                n = { function() harpoon:list():next() end, 'Go to next file' },
-                p = { function() harpoon:list():prev() end, 'Go to previous file' },
-                ['1'] = { function() harpoon:list():select(1) end, 'Go to file 1' },
-                ['2'] = { function() harpoon:list():select(2) end, 'Go to file 2' },
-                ['3'] = { function() harpoon:list():select(3) end, 'Go to file 3' },
-                ['4'] = { function() harpoon:list():select(4) end, 'Go to file 4' },
-                ['5'] = { function() harpoon:list():select(5) end, 'Go to file 5' },
-            },
-        }, {
-            prefix = '<leader>',
+        which_key.add({
+            { '<leader>h', desc = 'Harpoon', group = 'Open' },
+            { '<leader>h1', function() harpoon:list():select(1) end, desc = 'Go to file 1' },
+            { '<leader>h3', function() harpoon:list():select(2) end, desc = 'Go to file 3' },
+            { '<leader>h2', function() harpoon:list():select(3) end, desc = 'Go to file 2' },
+            { '<leader>h4', function() harpoon:list():select(4) end, desc = 'Go to file 4' },
+            { '<leader>h5', function() harpoon:list():select(5) end, desc = 'Go to file 5' },
+            { '<leader>ha', function() harpoon:list():add() end, desc = 'Add file' },
+            { '<leader>hd', function() harpoon:list():remove() end, desc = 'Remove file' },
+            { '<leader>he', function() toggle_telescope(harpoon:list()) end, desc = 'Toggle quick menu' },
+            { '<leader>hn', function() harpoon:list():next() end, desc = 'Go to next file' },
+            { '<leader>hp', function() harpoon:list():prev() end, desc = 'Go to previous file' },
         })
     end,
 }

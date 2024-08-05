@@ -14,65 +14,51 @@ return {
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
         local which_key = require('which-key')
         local on_attach = function(_, bufnr)
-            which_key.register({
-                d = {
-                    'Diagnostics',
-                    f = { vim.diagnostic.open_float, 'Open float diagnostic' },
-                    l = { ':Telescope diagnostics bufnr=0<cr>', 'Show buffer diagnosticsss' },
-                    L = { vim.diagnostic.setloclist, 'Open diagnostics list' },
-                },
-                E = {
-                    c = { vim.lsp.buf.code_action, 'See available code actions' },
-                    f = { function() vim.lsp.buf.format({ async = true }) end, 'Format file' },
-                    r = { vim.lsp.buf.rename, 'Smart rename' },
-                },
-                W = {
-                    'Workspace',
-                    a = { vim.lsp.buf.add_workspace_folder, 'Add workspace folder' },
-                    l = { function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, 'List workspaces' },
-                    r = { vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder' },
-                },
-            }, {
+            which_key.add({
                 buffer = bufnr,
                 noremap = true,
-                prefix = '<leader>',
                 silent = true,
+                { 'd', desc = 'Diagnostics' },
+                { 'df', vim.diagnostic.open_float, desc = 'Open float diagnostic' },
+                { 'dl', ':Telescope diagnostics bufnr=0<cr>', desc = 'Show buffer diagnosticsss' },
+                { 'dL', vim.diagnostic.setloclist, desc = 'Open diagnostics list' },
+                { 'E', desc = 'Edit' },
+                { 'Ec', vim.lsp.buf.code_action, desc = 'See available code actions' },
+                { 'Ef', function() vim.lsp.buf.format({ async = true }) end, desc = 'Format file' },
+                { 'Er', vim.lsp.buf.rename, desc = 'Smart rename' },
+                { 'W', desc = 'Workspace' },
+                { 'Wa', vim.lsp.buf.add_workspace_folder, desc = 'Add workspace folder' },
+                { 'Wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, desc = 'List workspaces' },
+                { 'Wr', vim.lsp.buf.remove_workspace_folder, desc = 'Remove workspace folder' },
             })
-            which_key.register({
-                ['<c-k>'] = { vim.lsp.buf.signature_help, 'Go to signature help' },
-                ['[d'] = { vim.diagnostic.goto_prev, 'Go to previous diagnostic' },
-                [']d'] = { vim.diagnostic.goto_next, 'Go to next diagnostic' },
-                d = {
-                    p = { vim.diagnostic.goto_prev, 'Go to previous diagnostic' },
-                    n = { vim.diagnostic.goto_next, 'Go to next diagnostic' },
-                },
-                F = {
-                    r = { ':LspRestart<cr>', 'Restart LSP' },
-                },
-                g = {
-                    r = { ':Telescope lsp_references show_line=false<cr>', 'Go to LSP references' },
-                    D = { vim.lsp.buf.declaration, 'Go to declaration' },
-                    d = { ':Telescope lsp_definitions<cr>', 'Go to LSP definitions' },
-                    i = { ':Telescope lsp_implementations<cr>', 'Go to LSP implementations' },
-                    I = { ':LspInfo<cr>', 'Go to LSP information' },
-                    t = { ':Telescope lsp_type_definitions<cr>', 'Go to LSP type definitions' },
-                },
-                K = { vim.lsp.buf.hover, 'Show documentation for what is under cursor' },
-            }, {
+            which_key.add({
                 buffer = bufnr,
                 noremap = true,
                 mode = 'n',
                 silent = true,
+                { '<c-k>', vim.lsp.buf.signature_help, desc = 'Go to signature help' },
+                { '[d', vim.diagnostic.goto_prev, desc = 'Go to previous diagnostic' },
+                { ']d', vim.diagnostic.goto_next, desc = 'Go to next diagnostic' },
+                { 'd', desc = 'Diagnostics' },
+                { 'dp', vim.diagnostic.goto_prev, desc = 'Go to previous diagnostic' },
+                { 'dn', vim.diagnostic.goto_next, desc = 'Go to next diagnostic' },
+                { 'Fr', ':LspRestart<cr>', desc = 'Restart LSP' },
+                { 'g', desc = 'Go to' },
+                { 'gr', ':Telescope lsp_references show_line=false<cr>', desc = 'Go to LSP references' },
+                { 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration' },
+                { 'gd', ':Telescope lsp_definitions<cr>', desc = 'Go to LSP definitions' },
+                { 'gi', ':Telescope lsp_implementations<cr>', desc = 'Go to LSP implementations' },
+                { 'gI', ':LspInfo<cr>', desc = 'Go to LSP information' },
+                { 'gt', ':Telescope lsp_type_definitions<cr>', desc = 'Go to LSP type definitions' },
+                { 'K', vim.lsp.buf.hover, desc = 'Show documentation for what is under cursor' },
             })
-            which_key.register({
-                E = {
-                    c = { vim.lsp.buf.code_action, 'See available code actions' },
-                },
-            }, {
+            which_key.add({
                 buffer = bufnr,
                 noremap = true,
                 mode = 'v',
                 silent = true,
+                { 'E', desc = 'Edit' },
+                { 'Ec', vim.lsp.buf.code_action, desc = 'See available code actions' },
             })
         end
 
