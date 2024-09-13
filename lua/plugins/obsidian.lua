@@ -47,7 +47,7 @@ return {
             },
             notes_subdir = "Notes",
             daily_notes = {
-                folder = 'notes/dailies',
+                folder = 'Notes/dailies',
             },
             completion = {
                 nvim_cmp = true,
@@ -109,7 +109,7 @@ return {
             { '<leader>oy', ':ObsidianYesterday<cr>', desc = 'Yesterday\'s note' },
             {
                 { '<leader>ow', desc = 'Switch workspace' },
-                { '<leader>own', ':ObsidianWorkspace current<cr>', desc = 'Current' },
+                { '<leader>owc', ':ObsidianWorkspace current<cr>', desc = 'Current' },
                 { '<leader>owl', ':ObsidianWorkspace local<cr>', desc = 'Local' },
                 { '<leader>oww', ':ObsidianWorkspace waterkhair<cr>', desc = 'WaterKhair' },
             },

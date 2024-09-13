@@ -20,7 +20,7 @@ return {
         mason_lspconfig.setup({
             ensure_installed = {
                 'html',
-                'tsserver',
+                'ts_ls',
                 'cssls',
                 'tailwindcss',
                 'emmet_ls',
