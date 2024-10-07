@@ -8,6 +8,9 @@ return {
         local tokyonight = require('tokyonight')
 
         tokyonight.setup({
+            on_colors = function(colors)
+                colors.fg_gutter = '#b2b8cf'
+            end,
             transparent = true,
             styles = {
                 sidebars = 'transparent',
