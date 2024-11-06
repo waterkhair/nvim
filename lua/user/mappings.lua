@@ -6,7 +6,6 @@ which_key.add({
     mode = 'n',
     {
         { '<leader>C', desc = 'Close' },
-        { '<leader>Ce', ':NvimTreeClose<cr>', desc = 'File explorer' },
         { '<leader>Ch', ':noh<cr>', desc = 'Highlights' },
         { '<leader>Cu', ':UndotreeHide', desc = 'Undotree' },
     },
@@ -23,6 +22,7 @@ which_key.add({
         { '<leader>FC', ':q!<cr>', desc = 'Close (Force)' },
         { '<leader>FE', ':qa!<cr>', desc = 'Exit (Force)' },
         { '<leader>FS', ':w!<cr>', desc = 'Force save' },
+        { '<leader>Fo', ':OilOpenFloat<cr>', desc = 'Open (Oil)' },
         { '<leader>Fc', ':q<cr>', desc = 'Close' },
         { '<leader>Fe', ':qa<cr>', desc = 'Exit' },
         { '<leader>Fo', ':so<cr>', desc = 'Source' },
@@ -32,7 +32,6 @@ which_key.add({
     {
         { '<leader>O', desc = 'Open' },
         { '<leader>OM', ':Mason<cr>', desc = 'Mason' },
-        { '<leader>Oe', ':NvimTreeOpen<cr>', desc = 'File explorer' },
         { '<leader>Of', ':OilOpenFloat<cr>', desc = 'File (Oil)' },
         { '<leader>Og', ':LazyGit<cr>', desc = 'LazyGit' },
         { '<leader>Ol', ':Lazy<cr>', desc = 'Lazy' },
@@ -71,6 +70,7 @@ which_key.add({
 which_key.add({
     mode = 'n',
     silent = true,
+    { '<leader>oo', ':OilOpenFloat<cr>', desc = 'Open file (Oil)' },
     { '<leader>qQ', ':q!<cr>', desc = 'Close (Force)' },
     { '<leader>qq', ':q<cr>', desc = 'Close' },
 })

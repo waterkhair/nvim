@@ -8,12 +8,6 @@ return {
     lazy = false,
     config = function()
         require('lualine').setup({
-            options = {
-                disabled_filetypes = {
-                    statusline = { 'NvimTree' },
-                    winbar = { 'NvimTree' },
-                },
-            },
             sections = {
                 lualine_a = { { 'filename', path = 1 } },
                 lualine_b = { 'progress' },

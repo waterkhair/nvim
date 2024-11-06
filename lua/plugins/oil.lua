@@ -2,12 +2,13 @@ return {
     'stevearc/oil.nvim',
     opts = {},
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
     lazy = false,
     config = function()
         local oil = require('oil')
 
         oil.setup({
-            default_file_explorer = false,
+            default_file_explorer = true,
             -- keymaps = {
             --     ["g?"] = "actions.show_help",
             --     ["<cr>"] = "actions.select",
