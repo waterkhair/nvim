@@ -3,13 +3,13 @@ return {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-        'hrsh7th/cmp-buffer', -- nvim-cmp source for buffer words
-        'hrsh7th/cmp-path', -- nvim-cmp source for filesystem paths
-        'hrsh7th/cmp-nvim-lua', -- nvim-cmp source for neovim Lua API
-        'L3MON4D3/LuaSnip', -- Snippet engine
-        'saadparwaiz1/cmp_luasnip', -- luasnip completion source for nvim-cmp
-        'rafamadriz/friendly-snippets', -- Snippets collection for a set of different programming languages
-        'onsails/lspkind.nvim', -- Adds vscode-like pictograms to neovim built-in lsp
+        { 'hrsh7th/cmp-buffer' }, -- nvim-cmp source for buffer words
+        { 'hrsh7th/cmp-path' }, -- nvim-cmp source for filesystem paths
+        { 'hrsh7th/cmp-nvim-lua' }, -- nvim-cmp source for neovim Lua API
+        { 'L3MON4D3/LuaSnip' }, -- Snippet engine
+        { 'saadparwaiz1/cmp_luasnip' }, -- luasnip completion source for nvim-cmp
+        { 'rafamadriz/friendly-snippets' }, -- Snippets collection for a set of different programming languages
+        { 'onsails/lspkind.nvim' }, -- Adds vscode-like pictograms to neovim built-in lsp
     },
     config = function()
         local cmp = require('cmp')

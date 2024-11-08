@@ -3,8 +3,8 @@ return {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-        'hrsh7th/cmp-nvim-lsp',
-        'onsails/lspkind.nvim', -- Adds vscode-like pictograms to neovim built-in lsp:
+        { 'hrsh7th/cmp-nvim-lsp' },
+        { 'onsails/lspkind.nvim' }, -- Adds vscode-like pictograms to neovim built-in lsp:
         { 'antosha417/nvim-lsp-file-operations', config = true },
     },
     config = function()

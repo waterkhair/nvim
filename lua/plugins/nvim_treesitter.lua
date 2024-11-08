@@ -2,8 +2,8 @@
 return {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
-        'JoosepAlviste/nvim-ts-context-commentstring', -- Setting the commentstring option based on the cursor location in the file.
-        'nvim-treesitter/nvim-treesitter-textobjects', -- Syntax aware text-objects, select, move, swap, and peek support.
+        { 'JoosepAlviste/nvim-ts-context-commentstring' }, -- Setting the commentstring option based on the cursor location in the file.
+        { 'nvim-treesitter/nvim-treesitter-textobjects' }, -- Syntax aware text-objects, select, move, swap, and peek support.
         {
             'windwp/nvim-ts-autotag', -- Use treesitter to autoclose and autorename html tag.
             opts = {
