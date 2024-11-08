@@ -7,6 +7,8 @@ return {
     config = function()
         local oil = require('oil')
 
+        vim.opt.splitright = true
+
         oil.setup({
             default_file_explorer = true,
             columns = {
