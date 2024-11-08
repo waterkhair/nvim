@@ -1,7 +1,7 @@
 return {
     'epwalsh/obsidian.nvim',
     version = '*',
-    lazy = true,
+    lazy = false,
     -- ft = 'markdown',
     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
     -- event = {
@@ -28,8 +28,8 @@ return {
                     name = "current",
                     path = function()
                         -- alternatively use the CWD:
-                        -- return assert(vim.fn.getcwd())
-                        return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+                        return assert(vim.fn.getcwd())
+                        -- return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
                     end,
                     overrides = {
                         notes_subdir = vim.NIL, -- have to use 'vim.NIL' instead of 'nil'

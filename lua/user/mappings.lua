@@ -28,6 +28,12 @@ which_key.add({
         { '<leader>Fo', ':so<cr>', desc = 'Source' },
         { '<leader>Fs', ':w<cr>', desc = 'Save' },
         { '<leader>Fx', ':x<cr>', desc = 'Save and close (if modified)' },
+        { '<leader>Ftj', ':set filetype=json<cr>', desc = 'Set filetype to JSON' },
+        { '<leader>Ftm', ':set filetype=markdown<cr>', desc = 'Set filetype to Markdown' },
+        { '<leader>Ftp', ':set filetype=python<cr>', desc = 'Set filetype to Python' },
+        { '<leader>Ftq', ':set filetype=sql<cr>', desc = 'Set filetype to SQL' },
+        { '<leader>Fts', ':set filetype=sh<cr>', desc = 'Set filetype to shell' },
+        { '<leader>Ftt', ':set filetype=typescript<cr>', desc = 'Set filetype to TypeScript' },
     },
     {
         { '<leader>O', desc = 'Open' },
