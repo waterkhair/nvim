@@ -93,7 +93,7 @@ return {
 
         which_key.add({
             mode = 'n',
-            { '<leader>o', desc = 'Obsidian' },
+            { '<leader>o', desc = 'Obsidian', icon = '' },
             { '<leader>o30', ':ObsidianDailies -30 0<cr>', desc = 'Last 30 days notes' },
             { '<leader>o7', ':ObsidianDailies -7 0<cr>', desc = 'Last 7 days notes' },
             { '<leader>ob', ':ObsidianBackLinks<cr>', desc = 'Back links' },
@@ -117,7 +117,7 @@ return {
         })
         which_key.add({
             mode = 'v',
-            { '<leader>o', desc = 'Obsidian' },
+            { '<leader>o', desc = 'Obsidian', icon = '' },
             { '<leader>oe', ':ObsidianExtractNote ', desc = 'Extract selected text to new note' },
             { '<leader>ol', ':ObsidianLink<cr>', desc = 'Link selected text' },
             { '<leader>on', ':ObsidianLinkNew ', desc = 'Link selected text to new note' },

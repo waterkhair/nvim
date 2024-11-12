@@ -51,9 +51,8 @@ return {
             --     treesitter_context = nil, -- it can be { line_shift_down = 2 }, currently not usable, for detail see https://github.com/otavioschwanck/arrow.nvim/pull/43#issue-2236320268
             -- },
             -- separate_save_and_remove = false, -- if true, will remove the toggle and create the save/remove keymaps.
-            leader_key = ' a', -- Recommended to be a single key
-            -- leader_key = ' al', -- Recommended to be a single key
-            -- buffer_leader_key = ' ab', -- Per Buffer Mappings
+            leader_key = ' aa', -- Recommended to be a single key
+            buffer_leader_key = ' ab', -- Per Buffer Mappings
             -- save_key = 'cwd', -- what will be used as root to save the bookmarks. Can be also `git_root` and `git_root_bare`.
             -- global_bookmarks = false, -- if true, arrow will save files globally (ignores separate_by_branch)
             -- index_keys = '123456789zxcbnmZXVBNM,afghjklAFGHJKLwrtyuiopWRTYUIOP', -- keys mapped to bookmark index, i.e. 1st bookmark will be accessible by 1, and 12th - by c
@@ -62,9 +61,9 @@ return {
 
         which_key.add({
             mode = 'n',
-            { '<leader>a', desc = 'Arrow' },
-            -- { '<leader>ab', desc = 'List all arrowed files per buffer' },
-            -- { '<leader>al', desc = 'List all arrowed files' },
+            { '<leader>a', desc = 'Arrow', icon = '󱡁' },
+            { '<leader>aa', desc = 'List all arrowed files' },
+            { '<leader>ab', desc = 'List all arrowed files per buffer' },
         })
     end,
 }

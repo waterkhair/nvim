@@ -8,7 +8,7 @@ return {
         local which_key = require('which-key')
 
         which_key.add({
-            { '<leader>c', desc = 'Copilot' },
+            { '<leader>c', desc = 'Copilot', icon  = '' },
             { '<leader>cd', ':Copilot disable<cr>', desc = 'Disable Copilot' },
             { '<leader>ce', ':Copilot enable<cr>', desc = 'Enable Copilot' },
             { '<leader>cf', ':Copilot feedback<cr>', desc = 'Send feedback to Copilot' },

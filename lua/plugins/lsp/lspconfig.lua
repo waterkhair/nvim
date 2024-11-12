@@ -17,42 +17,18 @@ return {
             which_key.add({
                 buffer = bufnr,
                 noremap = true,
-                silent = true,
+                hidden = true,
                 {
-                    { 'd', desc = 'Diagnostics' },
+                    { 'd', desc = 'Diagnostics', icon = '󰈙' },
+                    { 'dd', vim.diagnostic.open, desc = 'Open diagnostic' },
                     { 'df', vim.diagnostic.open_float, desc = 'Open float diagnostic' },
-                    { 'dl', ':Telescope diagnostics bufnr=0<cr>', desc = 'Show buffer diagnosticsss' },
+                    { 'dl', ':Telescope diagnostics bufnr=0<cr>', desc = 'Find buffer diagnostics' },
                     { 'dL', vim.diagnostic.setloclist, desc = 'Open diagnostics list' },
-                },
-                {
-                    { 'E', desc = 'Edit' },
-                    { 'Ec', vim.lsp.buf.code_action, desc = 'See available code actions' },
-                    { 'Ef', function() vim.lsp.buf.format({ async = true }) end, desc = 'Format file' },
-                    { 'Er', vim.lsp.buf.rename, desc = 'Smart rename' },
-                },
-                {
-                    { 'L', desc = 'LSP' },
-                    { '<leader>Lr', ':LspRestart<cr>', desc = 'Restart LSP' },
-                },
-                {
-                    { 'W', desc = 'Workspace' },
-                    { 'Wa', vim.lsp.buf.add_workspace_folder, desc = 'Add workspace folder' },
-                    { 'Wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, desc = 'List workspaces' },
-                    { 'Wr', vim.lsp.buf.remove_workspace_folder, desc = 'Remove workspace folder' },
-                },
-            })
-            which_key.add({
-                buffer = bufnr,
-                noremap = true,
-                mode = 'n',
-                silent = true,
-                {
-                    { 'd', desc = 'Diagnostics' },
                     { 'dp', vim.diagnostic.goto_prev, desc = 'Go to previous diagnostic' },
                     { 'dn', vim.diagnostic.goto_next, desc = 'Go to next diagnostic' },
                 },
                 {
-                    { 'g', desc = 'Go to' },
+                    { 'g', desc = 'Go to', icon = '' },
                     { 'gr', ':Telescope lsp_references show_line=false<cr>', desc = 'Go to LSP references' },
                     { 'gD', vim.lsp.buf.declaration, desc = 'Go to declaration' },
                     { 'gd', ':Telescope lsp_definitions<cr>', desc = 'Go to LSP definitions' },
@@ -62,17 +38,31 @@ return {
                     { 'K', vim.lsp.buf.hover, desc = 'Show documentation for what is under cursor' },
                 },
                 { '<c-k>', vim.lsp.buf.signature_help, desc = 'Go to signature help' },
-                { '[d', vim.diagnostic.goto_prev, desc = 'Go to previous diagnostic' },
-                { ']d', vim.diagnostic.goto_next, desc = 'Go to next diagnostic' },
+            })
+            which_key.add({
+                buffer = bufnr,
+                noremap = true,
+                {
+                    { '<leader>l', desc = 'LSP', icon = '' },
+                    { '<leader>lc', vim.lsp.buf.code_action, desc = 'Code actions' },
+                    { '<leader>lf', function() vim.lsp.buf.format({ async = true }) end, desc = 'Format file' },
+                    { '<leader>lr', vim.lsp.buf.rename, desc = 'Smart rename' },
+                    { '<leader>lt', ':LspRestart<cr>', desc = 'Restart LSP' },
+                },
+                {
+                    { '<leader>w', desc = 'Workspace', icon = '󱈹' },
+                    { '<leader>wa', vim.lsp.buf.add_workspace_folder, desc = 'Add workspace folder' },
+                    { '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, desc = 'List workspaces folders' },
+                    { '<leader>wr', vim.lsp.buf.remove_workspace_folder, desc = 'Remove workspace folder' },
+                },
             })
             which_key.add({
                 buffer = bufnr,
                 noremap = true,
                 mode = 'v',
-                silent = true,
                 {
-                    { 'E', desc = 'Edit' },
-                    { 'Ec', vim.lsp.buf.code_action, desc = 'See available code actions' },
+                    { '<leader>l', desc = 'LSP' },
+                    { '<leader>lc', vim.lsp.buf.code_action, desc = 'Code actions' },
                 },
             })
         end
