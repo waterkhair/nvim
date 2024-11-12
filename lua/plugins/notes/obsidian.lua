@@ -92,7 +92,6 @@ return {
         })
 
         which_key.add({
-            mode = 'n',
             { '<leader>o', desc = 'Obsidian', icon = '' },
             { '<leader>o30', ':ObsidianDailies -30 0<cr>', desc = 'Last 30 days notes' },
             { '<leader>o7', ':ObsidianDailies -7 0<cr>', desc = 'Last 7 days notes' },
@@ -102,7 +101,15 @@ return {
             { '<leader>oi', ':ObsidianPasteImg ', desc = 'Paste image from clipboard' },
             { '<leader>ol', ':ObsidianLinks<cr>', desc = 'Show links' },
             { '<leader>on', ':ObsidianNew ', desc = 'New' },
-            { '<leader>oo', ':ObsidianOpen ', desc = 'Open in app' },
+            {
+                '<leader>oo',
+                function()
+                    vim.cmd('ObsidianWorkspace local')
+                    vim.cmd('ObsidianQuickSwitch')
+                end,
+                desc = 'Obsidian',
+            },
+            { '<leader>oO', ':ObsidianOpen ', desc = 'Open in app' },
             { '<leader>or', ':ObsidianTomorrow<cr>', desc = 'Tomorrow\'s note' },
             { '<leader>oq', ':ObsidianQuickSwitch<cr>', desc = 'Quick switch' },
             { '<leader>os', ':ObsidianSearch ', desc = 'Search' },
@@ -123,11 +130,19 @@ return {
             { '<leader>on', ':ObsidianLinkNew ', desc = 'Link selected text to new note' },
         })
         which_key.add({
-            mode = 'n',
             { '<c-x>', ':ObsidianToggleCheckbox<cr>', desc = 'Toggle checkbox' },
         })
-
-        vim.api.nvim_create_user_command('ObsidianOpenFiles', function() vim.cmd('ObsidianWorkspace local') vim.cmd('ObsidianQuickSwitch') end, {})
-        vim.api.nvim_create_user_command('ObsidianOpenMarkdownFiles', function() vim.cmd('ObsidianWorkspace current') vim.cmd('ObsidianQuickSwitch') end, {})
+        which_key.add({
+            hidden = true,
+            {
+                '<leader>mm',
+                function()
+                    vim.cmd('ObsidianWorkspace current')
+                    vim.cmd('ObsidianQuickSwitch')
+                end,
+                desc = 'Markdown',
+                icon = '',
+            },
+        })
     end,
 }

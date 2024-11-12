@@ -46,8 +46,6 @@ which_key.add({
     {
         -- Navigation
         { '<leader>cc', ':qa<cr>', desc = 'Exit', icon = '󱎘' },
-        { '<leader>ee', ':OilOpenFloat<cr>', desc = 'Oil (Open)', icon = '' },
-        { '<leader>oo', ':ObsidianOpenFiles<cr>', desc = 'Obsidian (Open)' },
         { '<leader>qq', ':q<cr>', desc = 'Buffer (Close)' },
         { '<leader>QQ', ':q!<cr>', desc = 'Buffer (Force Close)' },
         { '<leader>rr', ':so<cr>', desc = 'Source current file' },
@@ -59,17 +57,12 @@ which_key.add({
     },
     {
         -- Tools
-        { '<leader>gg', ':LazyGit<cr>', desc = 'LazyGit (Open)' },
         { '<leader>hh', ':noh<cr>', desc = 'Highlights (Close)' },
         { '<leader>ii', ':NvimWebDeviconsHiTest<cr>', desc = 'Web Devicons (Open)' },
         { '<leader>ll', ':Lazy<cr>', desc = 'Lazy (Open)' },
-        { '<leader>mm', ':ObsidianOpenMarkdownFiles<cr>', desc = 'Markdown (Open)' },
-        { '<leader>nn', ':Mason<cr>', desc = 'Mason (Open)' },
-        { '<leader>ww', ':WhichKey<cr>', desc = 'Which Key (Open)' },
     },
 })
 which_key.add({
-    mode = 'n',
     { '<c-d>', '<C-d>zz', desc = 'Move half page down but keep cursor centered' },
     { '<c-u>', '<C-u>zz', desc = 'Move half page up but keep cursor centered' },
     { 'J', 'mzJ`z', desc = 'Append next line to current line' },

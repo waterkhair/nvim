@@ -41,7 +41,6 @@ return {
         })
 
         which_key.add({
-            mode = 'n',
             { '<leader>b', desc = 'Buffers' },
             { '<leader>ba', ':bufdo :Bdelete<cr>', desc = 'Close all buffers' },
             { '<leader>bc', ':Bdelete<cr>', desc = 'Close current buffer' },

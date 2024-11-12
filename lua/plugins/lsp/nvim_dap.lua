@@ -98,7 +98,6 @@ return {
         dapui.setup()
 
         which_key.add({
-            mode = 'n',
             { '<leader>d', desc = 'DAP', icon = '' },
             { '<leader>db', function() dap.toggle_breakpoint() end, desc = 'Breakpoint', icon = '' },
             { '<leader>dc', function() dap.continue() end, desc = 'Continue', icon = '' },

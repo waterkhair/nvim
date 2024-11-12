@@ -60,7 +60,6 @@ return {
         })
 
         which_key.add({
-            mode = 'n',
             { '<leader>a', desc = 'Arrow', icon = '󱡁' },
             { '<leader>aa', desc = 'List all arrowed files' },
             { '<leader>ab', desc = 'List all arrowed files per buffer' },

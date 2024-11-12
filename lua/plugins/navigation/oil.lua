@@ -7,6 +7,7 @@ return {
     lazy = false,
     config = function()
         local oil = require('oil')
+        local which_key = require('which-key')
 
         vim.opt.splitright = true
 
@@ -46,6 +47,9 @@ return {
             -- use_defauylt_keymaps = false,
         })
 
-        vim.api.nvim_create_user_command('OilOpenFloat', function() oil.open_float() end, {})
+        which_key.add({
+            hidden = true,
+            { '<leader>ee', function() oil.open_float() end, desc = 'Oil', icon = '' },
+        })
     end,
 }

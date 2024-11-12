@@ -39,7 +39,6 @@ return {
                 -- Actions
                 which_key.add({
                     buffer = bufnr,
-                    mode = 'n',
                     { '<leader>g', desc = 'Git' },
                     { '<leader>gs', gs.stage_hunk, desc = 'Stage hunk' },
                     { '<leader>gr', gs.reset_hunk, desc = 'Reset hunk' },

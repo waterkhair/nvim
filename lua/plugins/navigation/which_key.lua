@@ -29,6 +29,10 @@ return {
                 },
             },
         })
+        which_key.add({
+            hidden = true,
+            { '<leader>kk', ':WhichKey<cr>', desc = 'Which Key (Open)' },
+        })
     end,
 }
 

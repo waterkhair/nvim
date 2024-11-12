@@ -6,6 +6,7 @@ return {
     config = function()
         local mason = require('mason')
         local mason_lspconfig = require('mason-lspconfig')
+        local which_key = require('which-key')
 
         mason.setup({
             ui = {
@@ -28,6 +29,11 @@ return {
                 'lua_ls',
             },
             automatic_installation = true,
+        })
+
+        which_key.add({
+            hidden = true,
+            { '<leader>nn', ':Mason<cr>', desc = 'Mason' },
         })
     end
 }
