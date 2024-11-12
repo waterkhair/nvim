@@ -1,4 +1,4 @@
--- Provides a simple and easy way to use the interface for tree-sitter.
+-- Provides a simple and easy way to use the interface for tree-sitter
 return {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {

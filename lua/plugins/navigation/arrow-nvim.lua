@@ -1,3 +1,4 @@
+-- Plugin made to bookmarks files (like harpoon) using a single UI (and single keymap).
 return {
     'otavioschwanck/arrow.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },

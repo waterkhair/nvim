@@ -1,3 +1,4 @@
+-- Shows status symbol of your version control system in oil.nvim buffers
 return {
     'SirZenith/oil-vcs-status',
     opts = {},

@@ -1,3 +1,4 @@
+-- A Neovim plugin for writing and navigating Obsidian vaults, written in Lua.
 return {
     'epwalsh/obsidian.nvim',
     version = '*',

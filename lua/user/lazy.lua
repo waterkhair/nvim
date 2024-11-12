@@ -19,6 +19,10 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     { import = 'plugins' },
     { import = 'plugins.lsp' },
+    { import = 'plugins.navigation' },
+    { import = 'plugins.notes' },
+    { import = 'plugins.ui' },
+    { import = 'plugins.vcs' },
     -- Interesting plugins to review
     --{ 'folke/neodev.nvim' }, -- Setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API
     --{ 'glepnir/dashboard-nvim' }, -- Fancy and Blazing Fast start screen plugin of neovim
