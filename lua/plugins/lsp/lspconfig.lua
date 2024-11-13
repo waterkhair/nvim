@@ -9,6 +9,8 @@ return {
     },
     config = function()
         vim.diagnostic.config({ float = { border = 'rounded' } })
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
         local lspconfig = require('lspconfig')
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
@@ -18,6 +20,7 @@ return {
                 buffer = bufnr,
                 noremap = true,
                 hidden = true,
+                { '<c-k>', vim.lsp.buf.signature_help, desc = 'Signature help' },
                 {
                     { 'd', desc = 'Diagnostics', icon = '󰈙' },
                     { 'dd', vim.diagnostic.open, desc = 'Open diagnostic' },
@@ -37,7 +40,6 @@ return {
                     { 'gt', ':Telescope lsp_type_definitions<cr>', desc = 'Go to LSP type definitions' },
                     { 'K', vim.lsp.buf.hover, desc = 'Show documentation for what is under cursor' },
                 },
-                { '<c-k>', vim.lsp.buf.signature_help, desc = 'Go to signature help' },
             })
             which_key.add({
                 buffer = bufnr,
