@@ -34,40 +34,6 @@ return {
             -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
         })
 
-        dap.configurations.javascript = {
-            {
-                type = 'pwa-node',
-                request = 'launch',
-                name = 'Launch file',
-                program = '${file}',
-                cwd = '${workspaceFolder}',
-            },
-            {
-                type = 'pwa-node',
-                request = 'attach',
-                name = 'Attach',
-                processId = dap_utils.pick_process,
-                cwd = '${workspaceFolder}',
-            },
-        }
-
-        dap.configurations.typescript = {
-            {
-                type = 'pwa-node',
-                request = 'launch',
-                name = 'Launch file',
-                program = '${file}',
-                cwd = '${workspaceFolder}',
-            },
-            {
-                type = 'pwa-node',
-                request = 'attach',
-                name = 'Attach',
-                processId = dap_utils.pick_process,
-                cwd = '${workspaceFolder}',
-            },
-        }
-
         lazydev.setup({
             library = {
                 'nvim-dap-ui',
@@ -113,17 +79,59 @@ return {
 
         which_key.add({
             { '<leader>d', desc = 'DAP', icon = '' },
+            {
+                '<leader>da',
+                function()
+                    dap.run({
+                        type = 'pwa-node',
+                        request = 'attach',
+                        name = 'Attach',
+                        processId = dap_utils.pick_process,
+                        cwd = '${workspaceFolder}',
+                    })
+                end,
+                desc = 'Attach',
+                icon = '',
+            },
             { '<leader>db', function() dap.toggle_breakpoint() end, desc = 'Breakpoint', icon = '' },
             { '<leader>dc', function() dap.continue() end, desc = 'Continue', icon = '' },
             { '<leader>dd', function() dap_ui.toggle() end, desc = 'DAP UI', icon = '' },
+            {
+                '<leader>df',
+                function()
+                    dap.run({
+                        type = 'pwa-node',
+                        request = 'launch',
+                        name = 'Launch file',
+                        program = '${file}',
+                        cwd = '${workspaceFolder}',
+                    })
+                end,
+                desc = 'Launch file',
+                icon = '',
+            },
+            {
+                '<leader>dF',
+                function()
+                    dap.run({
+                        type = 'pwa-node',
+                        request = 'launch',
+                        name = 'Launch file',
+                        program = vim.fn.input('Path to file: '),
+                        cwd = vim.fn.input('Working directory: '),
+                    })
+                end,
+                desc = 'Launch file',
+                icon = '',
+            },
             { '<leader>dh', function() dap.set_breakpoint(nil, vim.fn.input('Hits: '), nil) end, desc = 'Hits Breakpoint', icon = '󰰂' },
             { '<leader>di', function() dap.step_into() end, desc = 'Step into', icon = '' },
-            { '<leader>dk', function() dap.step_back() end, desc = 'Step back', icon = '' },
             { '<leader>dl', function() dap.set_breakpoint(nil, nil, vim.fn.input('Message: ')) end, desc = 'Log Breakpoint', icon = '󰰎' },
+            { '<leader>dn', function() dap.step_over() end, desc = 'Step over', icon = '' },
             { '<leader>do', function() dap.step_out() end, desc = 'Step out', icon = '' },
+            { '<leader>dp', function() dap.step_back() end, desc = 'Step back', icon = '' },
             { '<leader>dr', function() dap.restart() end, desc = 'Restart', icon = '' },
-            { '<leader>ds', function() dap.run() end, desc = 'Start', icon = '' },
-            { '<leader>dv', function() dap.step_over() end, desc = 'Step over', icon = '' },
+            { '<leader>ds', function() dap.continue() end, desc = 'Start', icon = '' },
             { '<leader>dx', function() dap.close() end, desc = 'Stop', icon = '' },
             { '<leader>dv', function() dap_ext_vscode.load_launchjs() end, desc = 'Load configs', icon = '' },
             { '<leader>d?', function() dap.set_breakpoint(vim.fn.input('Condition: '), nil, nil) end, desc = 'Conditional Breakpoint', icon = '' },
