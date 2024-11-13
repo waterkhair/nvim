@@ -10,6 +10,7 @@ return {
     lazy = false,
     config = function()
         local dap = require('dap')
+        local dap_ext_vscode = require('dap.ext.vscode')
         local dap_utils = require('dap.utils')
         local dap_ui = require('dapui')
         local dap_vscode_js = require('dap-vscode-js')
@@ -124,6 +125,7 @@ return {
             { '<leader>ds', function() dap.run() end, desc = 'Start', icon = '' },
             { '<leader>dv', function() dap.step_over() end, desc = 'Step over', icon = '' },
             { '<leader>dx', function() dap.close() end, desc = 'Stop', icon = '' },
+            { '<leader>dv', function() dap_ext_vscode.load_launchjs() end, desc = 'Load configs', icon = '' },
             { '<leader>d?', function() dap.set_breakpoint(vim.fn.input('Condition: '), nil, nil) end, desc = 'Conditional Breakpoint', icon = '' },
         })
     end,

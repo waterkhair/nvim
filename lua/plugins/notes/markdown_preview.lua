@@ -16,10 +16,10 @@ return {
         local which_key = require('which-key')
 
         which_key.add({
-            { '<leader>m', desc = 'Markdown' },
-            { '<leader>mP', ':MarkdownPreview<cr>', desc = 'Preview markdown' },
-            { '<leader>mS', ':MarkdownPreviewStop<cr>', desc = 'Stop preview' },
-            { '<leader>mT', ':MarkdownPreviewToggle<cr>', desc = 'Toggle preview' },
+            { '<leader>p', desc = 'Preview', icon = '' },
+            { '<leader>ps', ':MarkdownPreview<cr>', desc = 'Preview markdown' },
+            { '<leader>px', ':MarkdownPreviewStop<cr>', desc = 'Stop preview' },
+            { '<leader>pp', ':MarkdownPreviewToggle<cr>', desc = 'Toggle preview' },
         })
     end,
 }
