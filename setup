@@ -7,14 +7,24 @@ if [ -f '~/.profile' ]; then
 fi
 
 # Set messages to print
+COPYING_ALACRITTY="Copying alacritty.toml to ~/.config/alacritty/alacritty.toml"
+PROFILE_ALACRITTY="alacritty.toml copied to ~/.config/alacritty/alacritty.toml successfully"
+COPYING_P10K='Copying .p10k.zsh to ~/.p10k.zsh'
+P10K_COPIED='.p10k.zsh copied to ~/.p10k.zsh successfully'
 COPYING_PROFILE="Copying $PROFILE to ~/$PROFILE"
 PROFILE_COPIED="$PROFILE copied to ~/$PROFILE successfully"
 COPYING_TMUX='Copying .tmux.conf to ~/.tmux.conf'
 TMUX_COPIED='.tmux.conf copied to ~/.tmux.conf successfully'
 USAGE="Usage: $(basename $0) [-p] [-t]"
 
-# Copy both files by default
+# Copy all files by default
 if [ "$#" -lt 1 ]; then
+    echo $COPYING_ALACRITTY
+    cp ./.alacritty.toml ~/.config/alacritty/alacritty.toml
+    echo $PROFILE_ALACRITTY
+    echo $COPYING_P10K
+    cp ./.p10k.zsh ~/.p10k.zsh
+    echo $P10K_COPIED
     echo $COPYING_PROFILE
     cp ./$PROFILE ~/$PROFILE
     echo $PROFILE_COPIED
@@ -25,8 +35,18 @@ if [ "$#" -lt 1 ]; then
 fi
 
 # Parse arguments
-while getopts 'pth' opt; do
+while getopts 'akpth' opt; do
     case "$opt" in
+        a)
+            echo $COPYING_ALACRITTY
+            cp ./.alacritty.toml ~/.config/alacritty/alacritty.toml
+            echo $PROFILE_ALACRITTY
+            ;;
+        k)
+            echo $COPYING_P10K
+            cp ./.p10k.zsh ~/.p10k.zsh
+            echo $P10K_COPIED
+            ;;
         p)
             echo $COPYING_PROFILE
             cp ./$PROFILE ~/$PROFILE
@@ -47,4 +67,3 @@ while getopts 'pth' opt; do
     esac
 done
 shift "$(($OPTIND -1))"
-
