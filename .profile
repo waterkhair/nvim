@@ -11,10 +11,22 @@ alias tmuxl='tmux ls'
 alias tmuxr='tmux source ~/.tmux.conf'
 alias tmuxk='tmux kill-session'
 alias tmuxe='tmux kill-session -a -t'
+alias vpnc='scutil --nc start "techops-hub"'
+alias vpnd='scutil --nc stop "techops-hub"'
+alias curlk='curl https://localhost:6443'
+alias rabbitstatus='kubectl get svc --namespace devlocal -w rabbitmq'
 alias rmmodules='find . -name "node_modules" -prune -exec rm -rf "{}" +'
+alias startvs='npm run build && npm run start:env frosh'
 alias rst='reset'
+alias cdrepos='cd ~/Development/repositories'
+alias npmrefresh='rmmodules && npm ci'
+alias npmrebuild='npmrefresh && npm run build'
+alias npmrestart='npmrebuild && npm run start'
+alias npmrestartenv='npmrebuild && npm run start:env frosh'
 alias emptycommit='git commit --allow-empty -m '
 alias p10kconfig='p10k configure'
+alias envsetup='nvm use && rmmodules && npm ci'
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 ### ALACRITTY CONFIG
 NORMAL_FAMILY="normal.family"
