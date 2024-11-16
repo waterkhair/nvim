@@ -132,6 +132,23 @@ return {
             { '<leader>dp', function() dap.step_back() end, desc = 'Step back', icon = '' },
             { '<leader>dr', function() dap.restart() end, desc = 'Restart', icon = '' },
             { '<leader>ds', function() dap.continue() end, desc = 'Start', icon = '' },
+            {
+                '<leader>dt',
+                function()
+                    dap.run({
+                        type = 'pwa-chrome',
+                        request = 'attach',
+                        port = 9229,
+                        name = 'Attach to port',
+                        sourceMaps = true,
+                        skipFiles = { '<node_internals>/**' },
+                        localRoot = '${workspaceFolder}',
+                        outFiles = { '${workspaceFolder}/js' },
+                    })
+                end,
+                desc = 'Launch file',
+                icon = '',
+            },
             { '<leader>dx', function() dap.close() end, desc = 'Stop', icon = '' },
             { '<leader>dv', function() dap_ext_vscode.load_launchjs() end, desc = 'Load configs', icon = '' },
             { '<leader>d?', function() dap.set_breakpoint(vim.fn.input('Condition: '), nil, nil) end, desc = 'Conditional Breakpoint', icon = '' },

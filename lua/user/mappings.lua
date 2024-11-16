@@ -46,20 +46,22 @@ which_key.add({
     {
         -- Navigation
         { '<leader>cc', ':qa<cr>', desc = 'Exit', icon = '󱎘' },
+        { '<leader>hh', ':split<cr>', desc = 'Horizontal split', icon = '' },
         { '<leader>qq', ':q<cr>', desc = 'Buffer (Close)' },
         { '<leader>QQ', ':q!<cr>', desc = 'Buffer (Force Close)' },
         { '<leader>rr', ':so<cr>', desc = 'Source current file' },
         { '<leader>ss', ':w<cr>', desc = 'Save', icon = '' },
         { '<leader>SS', ':w!<cr>', desc = 'Save (Force)' },
         { '<leader>xx', ':x<cr>', desc = 'Save and close (if modified)' },
-        { '<leader>vv', 'ggVG', desc = 'Select all' },
+        { '<leader>vv', ':vsplit<cr>', desc = 'Vertical split', icon = '' },
+        { '<leader>VV', 'ggVG', desc = 'Select all' },
         { '<leader>ww', ':windo diffthis<cr>', desc = 'Diff' },
     },
     {
         -- Tools
-        { '<leader>hh', ':noh<cr>', desc = 'Highlights (Close)' },
         { '<leader>ii', ':NvimWebDeviconsHiTest<cr>', desc = 'Web Devicons (Open)' },
         { '<leader>ll', ':Lazy<cr>', desc = 'Lazy (Open)' },
+        { '<leader>xc', ':noh<cr>', desc = 'Highlights (Close)' },
     },
 })
 which_key.add({

@@ -104,6 +104,7 @@ return {
             'query',
             'markdown',
             'markdown_inline',
+            'sql',
         },
     },
 }
